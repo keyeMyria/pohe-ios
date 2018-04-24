@@ -22,11 +22,13 @@ class ArticleViewController: UIViewController {
     var output: ArticleViewOutput!
     var presenter: ArticlePresentation!
     var articles: [Article] = []
+    private let bag = DisposeBag()
 
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupRx()
 //        output.viewIsReady()
         presenter.viewDidLoad()
     }
@@ -44,6 +46,13 @@ class ArticleViewController: UIViewController {
         tableView.dataSource = self
 //        tableView.refreshControl = refreshControl
 //        noDataLabel.isHidden = true
+    }
+    
+    private func setupRx() {
+         tableView.rx.reachedBottom
+            .asObservable()
+            .subscribe(onNext: { [weak self] _ in self?.presenter.reachedBottom() })
+            .disposed(by: bag)
     }
 
 }
