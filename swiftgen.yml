@@ -1,0 +1,5 @@
+output_dir: ./pohe-ios/Modules/Generated
+storyboards:
+  templateName: swift4
+  paths: ./pohe-ios/
+  output: StoryBoards.swift

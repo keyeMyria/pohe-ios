@@ -15,8 +15,7 @@ final class RestAPI {
     }
     
     struct GetArticlesRequest: RestRequest, PaginationRequest {
-        
-        typealias Response = [Article]
+        typealias Response = ArticleList
         
         var page: Int
         private let category: String

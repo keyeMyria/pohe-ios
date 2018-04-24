@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ArticleInteractorOutput: class {
-//    var view: ArticleView? { get }
+    var view: ArticleViewController? { get }
     var articles: [Article] { get set }
     var isLoading: Bool { get set }
     func articlesFetched(_ tweets: [Article])
@@ -23,7 +23,7 @@ extension ArticleInteractorOutput {
 //            view?.showNoContentView()
         } else {
             self.articles = articles
-//            view?.showArticles(articles: articles)
+            view?.showArticles(articles: self.articles)
         }
     }
     
@@ -33,6 +33,6 @@ extension ArticleInteractorOutput {
             return
         }
         self.articles += articles
-//        view?.updateArticles(articles: self.articles)
+        view?.updateArticles(articles: self.articles)
     }
 }

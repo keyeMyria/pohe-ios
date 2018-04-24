@@ -11,9 +11,12 @@ import UIKit
 class ArticleRouter: ArticleRouterInput {
     weak var viewController: UIViewController?
 
+    required init(viewController: UIViewController?) {
+        self.viewController = viewController
+    }
+
 
     static func assembleModule() -> UIViewController {
-        
         let view = StoryboardScene.ArticleViewController.initialScene.instantiate()
         let interactor = ArticleInteractor()
         let router = ArticleRouter(viewController: view)
