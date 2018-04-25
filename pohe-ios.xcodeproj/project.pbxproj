@@ -16,6 +16,7 @@
 		4E17D6EE208F2D2700395347 /* UIScrollView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D6ED208F2D2700395347 /* UIScrollView+Rx.swift */; };
 		4E17D6F0208F2F0700395347 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D6EF208F2F0700395347 /* Page.swift */; };
 		4E17D6F420906E1700395347 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D6F320906E1700395347 /* UIImageViewExtension.swift */; };
+		4E17D6F62090817900395347 /* WebViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D6F52090817900395347 /* WebViewUtil.swift */; };
 		4EB45EF4208DC5F000BB64E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB45EF3208DC5F000BB64E5 /* AppDelegate.swift */; };
 		4EB45EF6208DC5F000BB64E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB45EF5208DC5F000BB64E5 /* ViewController.swift */; };
 		4EB45EF9208DC5F000BB64E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EB45EF7208DC5F000BB64E5 /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		4E17D6ED208F2D2700395347 /* UIScrollView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Rx.swift"; sourceTree = "<group>"; };
 		4E17D6EF208F2F0700395347 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		4E17D6F320906E1700395347 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		4E17D6F52090817900395347 /* WebViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewUtil.swift; sourceTree = "<group>"; };
 		4EB45EF0208DC5F000BB64E5 /* pohe-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pohe-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB45EF3208DC5F000BB64E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EB45EF5208DC5F000BB64E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				4E17D6ED208F2D2700395347 /* UIScrollView+Rx.swift */,
 				4E17D6F320906E1700395347 /* UIImageViewExtension.swift */,
+				4E17D6F52090817900395347 /* WebViewUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				4EB45EF6208DC5F000BB64E5 /* ViewController.swift in Sources */,
 				4EB45F14208DCA4A00BB64E5 /* RootRouter.swift in Sources */,
 				4EB45EF4208DC5F000BB64E5 /* AppDelegate.swift in Sources */,
+				4E17D6F62090817900395347 /* WebViewUtil.swift in Sources */,
 				B38AB6A062F1CE9154FB9326 /* ArticleViewInput.swift in Sources */,
 				4EB45F23208DDD0400BB64E5 /* Article.swift in Sources */,
 				4EB45F1C208DD16E00BB64E5 /* RestAPI.swift in Sources */,

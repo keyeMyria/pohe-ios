@@ -89,7 +89,11 @@ extension ArticleViewController: UITableViewDataSource {
 extension ArticleViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-//        let article = articles[indexPath.row]
+        let article = articles[indexPath.row]
+        guard let nc = self.navigationController else {
+            return
+        }
+        WebViewUtil.showWebView(urlString: article.page.url, from: nc, disAppear: {})
 //        self.presenter.didSelect(with: tweet.user)
     }
 }
