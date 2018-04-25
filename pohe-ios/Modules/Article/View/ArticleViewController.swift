@@ -37,10 +37,10 @@ class ArticleViewController: UIViewController {
         self.navigationItem.title = "記事"
         
         tableView.register(cellType: ArticleTableViewCell.self)
-        tableView.estimatedRowHeight = 85.0
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.separatorInset = UIEdgeInsets.zero
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
+//        tableView.estimatedRowHeight = 120.0
+//        tableView.rowHeight = 150.0
+//        tableView.separatorInset = UIEdgeInsets.zero
+//        tableView.tableFooterView = UIView(frame: CGRect.zero)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -78,16 +78,16 @@ extension ArticleViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ArticleTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-//        cell.textLabel?.text = articles[indexPath.row]._id
         cell.setupArticle(articles[indexPath.row])
         return cell
     }
+
 }
 
 extension ArticleViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let article = articles[indexPath.row]
+//        let article = articles[indexPath.row]
 //        self.presenter.didSelect(with: tweet.user)
     }
 }

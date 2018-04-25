@@ -8,8 +8,12 @@
 
 import UIKit
 import Reusable
+import Nuke
+import Kingfisher
 
 class ArticleTableViewCell: UITableViewCell, NibReusable {
+    
+    @IBOutlet weak var samune: UIImageView!
     @IBOutlet weak var label: UILabel!
     
     override func awakeFromNib() {
@@ -24,7 +28,10 @@ class ArticleTableViewCell: UITableViewCell, NibReusable {
     }
     
     func setupArticle(_ article: Article) {
-        label.text = article._id
+        label.text = article.page.title
+
+        Manager.shared.loadImage(with: URL(string: article.page.thumbnail ?? "https://www.pakutaso.com/shared/img/thumb/PAK85_graynohikari20141108124928_TP_V.jpg")!, into: samune)
+
     }
     
 }

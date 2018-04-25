@@ -27,7 +27,7 @@ extension ArticleInteractorOutput {
         }
     }
     
-    func articlesAdded(_ tweets: [Article]) {
+    func articlesAdded(_ articles: [Article]) {
         isLoading = false
         if articles.isEmpty {
             return

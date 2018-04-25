@@ -10,5 +10,5 @@ import Foundation
 import APIKit
 
 protocol PaginationRequest: Request {
-    var page: Int { get set }
+    var offset: Int { get set }
 }

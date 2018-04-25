@@ -17,11 +17,11 @@ final class RestAPI {
     struct GetArticlesRequest: RestRequest, PaginationRequest {
         typealias Response = ArticleList
         
-        var page: Int
+        var offset: Int
         private let category: String
         
-        init(category: String, page: Int = 1) {
-            self.page = page
+        init(category: String, offset: Int = 0) {
+            self.offset = offset
             self.category = category
         }
         
@@ -34,7 +34,7 @@ final class RestAPI {
         }
         
         var queryParameters: [String : Any]? {
-            var parameter =  ["page": page.description]
+            var parameter =  ["offset": offset]
             return parameter
         }
         

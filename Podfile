@@ -11,6 +11,7 @@ def common_pods
   pod 'SwiftGen'
   pod 'Reusable'
   pod 'APIKit'
+  pod 'Kingfisher'
 end
 
 target 'pohe-ios' do

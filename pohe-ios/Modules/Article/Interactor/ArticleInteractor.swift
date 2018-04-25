@@ -13,7 +13,7 @@ import APIKit
 protocol ArticleUsecase: class {
     var output: ArticleInteractorOutput! { get }
     func fetch(with category: String)
-    func addArticles(category: String, page: Int)
+    func addArticles(category: String, offset: Int)
 }
 
 class ArticleInteractor: ArticleUsecase {
@@ -32,8 +32,8 @@ class ArticleInteractor: ArticleUsecase {
             .disposed(by: bag)
     }
     
-    func addArticles(category: String, page: Int) {
-        let request = RestAPI.GetArticlesRequest(category: category, page: page)
+    func addArticles(category: String, offset: Int) {
+        let request = RestAPI.GetArticlesRequest(category: category, offset: offset)
         session.rx.response(request: request).share()
             .subscribe(
                 onNext: { [weak self] (list: ArticleList) in

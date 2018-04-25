@@ -10,9 +10,11 @@ import Foundation
 
 struct Article: Codable {
     let _id: String
+    let page: Page
     
     private enum CodingKeys: String, CodingKey {
         case _id
+        case page
     }
     
 }

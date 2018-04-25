@@ -26,7 +26,7 @@ class ArticlePresenter: ArticlePresentation {
     private let category: String
     var articles: [Article]
     var isLoading: Bool
-    var page: Int
+    var offset: Int
 
     var interactor: ArticleUsecase
     var router: ArticleRouter
@@ -38,7 +38,7 @@ class ArticlePresenter: ArticlePresentation {
         self.category = "javascript"
         self.articles = []
         self.isLoading = false
-        self.page = 1
+        self.offset = 0
     }
     
     func viewDidLoad() {
@@ -50,10 +50,10 @@ class ArticlePresenter: ArticlePresentation {
     }
     
     func reachedBottom() {
-        page = page + 1
+        offset = offset + articles.count
         if isLoading { return }
         isLoading = true
-        interactor.addArticles(category: category, page: page)
+        interactor.addArticles(category: category, offset: offset)
     }
 
 }

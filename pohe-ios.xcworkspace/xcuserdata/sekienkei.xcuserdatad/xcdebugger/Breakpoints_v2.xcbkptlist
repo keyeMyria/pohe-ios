@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "pohe-ios/Modules/Article/View/ArticleViewController.swift"
-            timestampString = "546254297.476701"
+            timestampString = "546328375.75256"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "pohe-ios/Model/RequestType.swift"
-            timestampString = "546249420.109581"
+            timestampString = "546315001.066836"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "pohe-ios/Model/RequestType.swift"
-            timestampString = "546249420.110055"
+            timestampString = "546315001.066951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "pohe-ios/Model/RequestType.swift"
-            timestampString = "546249420.110366"
+            timestampString = "546315001.067047"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "pohe-ios/Model/RequestType.swift"
-            timestampString = "546249420.110653"
+            timestampString = "546315001.067139"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "pohe-ios/Model/RequestType.swift"
-            timestampString = "546250650.013381"
+            timestampString = "546315001.067302"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -122,23 +122,21 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "pohe-ios/Modules/Article/View/ArticleViewController.swift"
-            timestampString = "546254297.477667"
+            timestampString = "546328375.753008"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
+            startingLineNumber = "91"
+            endingLineNumber = "91">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "pohe-ios/Modules/Article/View/ArticleViewController.swift"
-            timestampString = "546254297.478052"
+            timestampString = "546328375.753126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
@@ -154,13 +152,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "pohe-ios/Modules/Article/Presenter/ArticlePresenter.swift"
-            timestampString = "546254297.478398"
+            timestampString = "546328375.753238"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
             endingLineNumber = "56"
             landmarkName = "reachedBottom()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pohe-ios/Model/Entity/Page.swift"
+            timestampString = "546328375.753319"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "Page"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

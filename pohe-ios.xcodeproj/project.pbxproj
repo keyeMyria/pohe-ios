@@ -14,6 +14,7 @@
 		4E17D6EA208F248500395347 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D6E8208F248500395347 /* ArticleTableViewCell.swift */; };
 		4E17D6EB208F248500395347 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E17D6E9208F248500395347 /* ArticleTableViewCell.xib */; };
 		4E17D6EE208F2D2700395347 /* UIScrollView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D6ED208F2D2700395347 /* UIScrollView+Rx.swift */; };
+		4E17D6F0208F2F0700395347 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D6EF208F2F0700395347 /* Page.swift */; };
 		4EB45EF4208DC5F000BB64E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB45EF3208DC5F000BB64E5 /* AppDelegate.swift */; };
 		4EB45EF6208DC5F000BB64E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB45EF5208DC5F000BB64E5 /* ViewController.swift */; };
 		4EB45EF9208DC5F000BB64E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EB45EF7208DC5F000BB64E5 /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 		4E17D6E8208F248500395347 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		4E17D6E9208F248500395347 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
 		4E17D6ED208F2D2700395347 /* UIScrollView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Rx.swift"; sourceTree = "<group>"; };
+		4E17D6EF208F2F0700395347 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		4EB45EF0208DC5F000BB64E5 /* pohe-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pohe-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB45EF3208DC5F000BB64E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EB45EF5208DC5F000BB64E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			children = (
 				4EB45F22208DDD0400BB64E5 /* Article.swift */,
 				4E17D6E6208F1E2C00395347 /* ArticleList.swift */,
+				4E17D6EF208F2F0700395347 /* Page.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-pohe-iosUITests/Pods-pohe-iosUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/APIKit/APIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
@@ -480,6 +484,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
@@ -515,6 +520,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-pohe-ios/Pods-pohe-ios-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/APIKit/APIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
@@ -525,6 +531,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
@@ -563,6 +570,7 @@
 				4E17D6E7208F1E2C00395347 /* ArticleList.swift in Sources */,
 				4EB45F20208DD43100BB64E5 /* RequestType.swift in Sources */,
 				52DAC8AD4E47C1E4E11C41C7 /* ArticleRouterInput.swift in Sources */,
+				4E17D6F0208F2F0700395347 /* Page.swift in Sources */,
 				4E17D6EA208F248500395347 /* ArticleTableViewCell.swift in Sources */,
 				F794285881B95CD829E94100 /* ArticleRouter.swift in Sources */,
 				4E17D6EE208F2D2700395347 /* UIScrollView+Rx.swift in Sources */,
@@ -720,6 +728,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6BDV8F68L4;
 				INFOPLIST_FILE = "pohe-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eccentricyan.pohe-ios";
@@ -735,6 +744,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6BDV8F68L4;
 				INFOPLIST_FILE = "pohe-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eccentricyan.pohe-ios";
