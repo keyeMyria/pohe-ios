@@ -6,10 +6,11 @@
 //  Copyright © 2018年 石 臙慧. All rights reserved.
 //
 
+
+import Foundation
 import UIKit
 import Reusable
 import Nuke
-import Kingfisher
 
 class ArticleTableViewCell: UITableViewCell, NibReusable {
     
@@ -29,8 +30,11 @@ class ArticleTableViewCell: UITableViewCell, NibReusable {
     
     func setupArticle(_ article: Article) {
         label.text = article.page.title
-
-        Manager.shared.loadImage(with: URL(string: article.page.thumbnail ?? "https://www.pakutaso.com/shared/img/thumb/PAK85_graynohikari20141108124928_TP_V.jpg")!, into: samune)
+        var url = URL(string: article.page.thumbnail ?? "https://www.pakutaso.com/shared/img/thumb/PAK85_graynohikari20141108124928_TP_V.jpg")!
+        Manager.shared.loadImage(with: url, into: samune, handler: { [weak self] (image: Result<UIImage>, _) in
+            guard let weakSelf = self, let image = image.value else { return }
+            weakSelf.samune.image = image.cropping2square()
+        })
 
     }
     

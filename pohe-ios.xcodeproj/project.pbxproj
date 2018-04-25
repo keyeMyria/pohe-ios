@@ -15,6 +15,7 @@
 		4E17D6EB208F248500395347 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E17D6E9208F248500395347 /* ArticleTableViewCell.xib */; };
 		4E17D6EE208F2D2700395347 /* UIScrollView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D6ED208F2D2700395347 /* UIScrollView+Rx.swift */; };
 		4E17D6F0208F2F0700395347 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D6EF208F2F0700395347 /* Page.swift */; };
+		4E17D6F420906E1700395347 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D6F320906E1700395347 /* UIImageViewExtension.swift */; };
 		4EB45EF4208DC5F000BB64E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB45EF3208DC5F000BB64E5 /* AppDelegate.swift */; };
 		4EB45EF6208DC5F000BB64E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB45EF5208DC5F000BB64E5 /* ViewController.swift */; };
 		4EB45EF9208DC5F000BB64E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EB45EF7208DC5F000BB64E5 /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 		4E17D6E9208F248500395347 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
 		4E17D6ED208F2D2700395347 /* UIScrollView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Rx.swift"; sourceTree = "<group>"; };
 		4E17D6EF208F2F0700395347 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		4E17D6F320906E1700395347 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		4EB45EF0208DC5F000BB64E5 /* pohe-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pohe-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB45EF3208DC5F000BB64E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EB45EF5208DC5F000BB64E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				4E17D6ED208F2D2700395347 /* UIScrollView+Rx.swift */,
+				4E17D6F320906E1700395347 /* UIImageViewExtension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 				B0EA13619BF57BA0EA72E5DA /* ArticlePresenter.swift in Sources */,
 				49C3EE99B51F34C9416CDFF2 /* ArticleInteractorInput.swift in Sources */,
 				E8F5E2719E1C946CE5D4E738 /* ArticleInteractorOutput.swift in Sources */,
+				4E17D6F420906E1700395347 /* UIImageViewExtension.swift in Sources */,
 				8151D34AC28DD821F8B49FD0 /* ArticleInteractor.swift in Sources */,
 				4E17D6E0208EDB7B00395347 /* StoryBoards.swift in Sources */,
 				4E17D6E7208F1E2C00395347 /* ArticleList.swift in Sources */,
