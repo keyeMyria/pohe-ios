@@ -37,6 +37,8 @@ class ArticleViewController: UIViewController {
         self.navigationItem.title = "記事"
         
         tableView.register(cellType: ArticleTableViewCell.self)
+//        tableView.estimatedRowHeight = 150
+//        tableView.rowHeight = UITableViewAutomaticDimension
 //        tableView.estimatedRowHeight = 120.0
 //        tableView.rowHeight = 150.0
 //        tableView.separatorInset = UIEdgeInsets.zero

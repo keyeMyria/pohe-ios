@@ -44,7 +44,6 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="imageView" destination="BJ5-PU-Fsm" id="Iui-RH-fue"/>
                 <outlet property="label" destination="q5t-CX-hiX" id="CDe-fr-DmN"/>
                 <outlet property="samune" destination="BJ5-PU-Fsm" id="pbz-MT-EgX"/>
             </connections>
