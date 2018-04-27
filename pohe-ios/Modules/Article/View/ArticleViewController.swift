@@ -80,6 +80,7 @@ extension ArticleViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ArticleTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.samune.image = nil
         cell.setupArticle(articles[indexPath.row])
         return cell
     }

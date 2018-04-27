@@ -11,7 +11,7 @@ def common_pods
   pod 'SwiftGen'
   pod 'Reusable'
   pod 'APIKit'
-  pod 'Kingfisher'
+  pod 'XLPagerTabStrip'
 end
 
 target 'pohe-ios' do
