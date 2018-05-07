@@ -6,7 +6,11 @@
 //  Copyright © 2018 pohe. All rights reserved.
 //
 
-class MainInteractor: MainInteractorInput {
+protocol MainUsecase: class {
+    var output: MainInteractorOutput! { get }
+}
+
+class MainInteractor: MainUsecase {
 
     weak var output: MainInteractorOutput!
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 import RxSwift
 import RxCocoa
 
@@ -16,12 +17,13 @@ protocol ArticleView {
     func updateArticles(articles: [Article])
 }
 
-class ArticleViewController: UIViewController {
+class ArticleViewController: UIViewController, IndicatorInfoProvider {
 
     @IBOutlet weak var tableView: UITableView!
     var output: ArticleViewOutput!
     var presenter: ArticlePresentation!
     var articles: [Article] = []
+    var itemInfo = IndicatorInfo(title: "View")
     private let bag = DisposeBag()
 
     // MARK: Life cycle
@@ -55,6 +57,14 @@ class ArticleViewController: UIViewController {
             .asObservable()
             .subscribe(onNext: { [weak self] _ in self?.presenter.reachedBottom() })
             .disposed(by: bag)
+    }
+    
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return itemInfo
+    }
+    
+    func set(itemInfo: IndicatorInfo) {
+        self.itemInfo = itemInfo
     }
 
 }

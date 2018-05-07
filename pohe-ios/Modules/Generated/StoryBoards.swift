@@ -69,6 +69,11 @@ enum StoryboardScene {
 
     static let initialScene = InitialSceneType<ViewController>(storyboard: Main.self)
   }
+  enum MainViewController: StoryboardType {
+    static let storyboardName = "MainViewController"
+
+    static let initialScene = InitialSceneType<pohe_ios.MainViewController>(storyboard: MainViewController.self)
+  }
 }
 
 enum StoryboardSegue {

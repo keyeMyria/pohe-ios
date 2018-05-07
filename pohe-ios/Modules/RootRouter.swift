@@ -21,7 +21,7 @@ public class RootRouter: RootWireframe {
     }
     
     public func showRootScreen() {
-            let initVC = ArticleRouter.assembleModule()
+            let initVC = MainRouter.assembleModule()
             window.rootViewController = initVC
             window.makeKeyAndVisible()
         

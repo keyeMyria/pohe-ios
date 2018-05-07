@@ -11,7 +11,7 @@ def common_pods
   pod 'SwiftGen'
   pod 'Reusable'
   pod 'APIKit'
-  pod 'XLPagerTabStrip'
+  pod 'XLPagerTabStrip', '~> 8.0.1'
 end
 
 target 'pohe-ios' do
