@@ -32,14 +32,14 @@ class ArticleRouter: ArticleRouterInput  {
         return nav
     }
     
-    static func assembleView() -> UIViewController {
+    static func assembleView(_ category: String) -> UIViewController {
         let view = StoryboardScene.ArticleViewController.initialScene.instantiate()
-//        view.set(itemInfo: IndicatorInfo(title: "View"))
+        view.set(itemInfo: IndicatorInfo(title: category))
         let interactor = ArticleInteractor()
         let router = ArticleRouter(viewController: view)
         // memo: Presenterは依存関係が多いので、イニシャライザで参照渡す。
         let presenter = ArticlePresenter(view: view, router: router, interactor: interactor)
-        
+        presenter.category = category
         view.presenter = presenter
         interactor.output = presenter
         return view

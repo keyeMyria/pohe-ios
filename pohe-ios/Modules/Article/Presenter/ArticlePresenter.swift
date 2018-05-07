@@ -23,7 +23,7 @@ protocol ArticlePresentation: class {
 
 class ArticlePresenter: ArticlePresentation {
     weak var view: ArticleViewController?
-    private let category: String
+    var category: String
     var articles: [Article]
     var isLoading: Bool
     var offset: Int

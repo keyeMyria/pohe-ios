@@ -11,11 +11,11 @@ import XLPagerTabStrip
 
 class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollectionViewCell> {
 
-    private let articles1 = ArticleRouter.assembleView()
-    private let articles2 = ArticleRouter.assembleView()
-    private let articles3 = ArticleRouter.assembleView()
-    private let articles4 = ArticleRouter.assembleView()
-    private let articles5 = ArticleRouter.assembleView()
+    private let articles1 = ArticleRouter.assembleView("php")
+    private let articles2 = ArticleRouter.assembleView("ruby")
+    private let articles3 = ArticleRouter.assembleView("python")
+    private let articles4 = ArticleRouter.assembleView("ios")
+    private let articles5 = ArticleRouter.assembleView("android")
     
     var output: MainViewOutput!
     var presenter: MainPresentation!
