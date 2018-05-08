@@ -36,6 +36,8 @@
 		4EB45F1E208DD3C500BB64E5 /* PaginationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB45F1D208DD3C500BB64E5 /* PaginationRequest.swift */; };
 		4EB45F20208DD43100BB64E5 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB45F1F208DD43100BB64E5 /* RequestType.swift */; };
 		4EB45F23208DDD0400BB64E5 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB45F22208DDD0400BB64E5 /* Article.swift */; };
+		4EF0289220A18E920016810D /* colors.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4EF0289120A18E920016810D /* colors.xml */; };
+		4EF0289420A193B70016810D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0289320A193B70016810D /* Colors.swift */; };
 		52DAC8AD4E47C1E4E11C41C7 /* ArticleRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E375FD73A65644263104C41 /* ArticleRouterInput.swift */; };
 		5B61EDDC4AA19D032E442C77 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75A3BEC92FDC61EFDDCAF47 /* MainRouter.swift */; };
 		60487768D852563F15FC8B47 /* ArticleViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB16C209EAA1BD3B3379D5F /* ArticleViewOutput.swift */; };
@@ -101,6 +103,8 @@
 		4EB45F1D208DD3C500BB64E5 /* PaginationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationRequest.swift; sourceTree = "<group>"; };
 		4EB45F1F208DD43100BB64E5 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		4EB45F22208DDD0400BB64E5 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		4EF0289120A18E920016810D /* colors.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = colors.xml; sourceTree = "<group>"; };
+		4EF0289320A193B70016810D /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		513C96D209268DBF02AB8F06 /* MainModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainModuleInput.swift; sourceTree = "<group>"; };
 		562E94E1F5EF1192D3112443 /* Pods_pohe_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pohe_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C37FC2862C58E9A0598BDDA /* Pods-pohe-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pohe-iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-pohe-iosUITests/Pods-pohe-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 		4E17D6DC208ED8E800395347 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				4EF0289320A193B70016810D /* Colors.swift */,
 				4E17D6DF208EDB7B00395347 /* StoryBoards.swift */,
 			);
 			path = Generated;
@@ -260,6 +265,7 @@
 				4EB45EFC208DC5F000BB64E5 /* LaunchScreen.storyboard */,
 				4EB45EFF208DC5F000BB64E5 /* Info.plist */,
 				FE566791879A3630097DE45B /* Modules */,
+				4EF0289120A18E920016810D /* colors.xml */,
 			);
 			path = "pohe-ios";
 			sourceTree = "<group>";
@@ -487,6 +493,7 @@
 				4E17D6EB208F248500395347 /* ArticleTableViewCell.xib in Resources */,
 				4E17D702209167B900395347 /* TabCollectionViewCell.xib in Resources */,
 				4EB45EFE208DC5F000BB64E5 /* LaunchScreen.storyboard in Resources */,
+				4EF0289220A18E920016810D /* colors.xml in Resources */,
 				4EB45F17208DCB9A00BB64E5 /* ArticleViewController.storyboard in Resources */,
 				4EB45EFB208DC5F000BB64E5 /* Assets.xcassets in Resources */,
 				4E17D6FB2091659100395347 /* MainViewController.storyboard in Resources */,
@@ -681,6 +688,7 @@
 				4E17D6EE208F2D2700395347 /* UIScrollView+Rx.swift in Sources */,
 				DBEAD1A9FA6A6558FDDC15BE /* MainViewInput.swift in Sources */,
 				6BD716949C16571B42C96E05 /* MainViewOutput.swift in Sources */,
+				4EF0289420A193B70016810D /* Colors.swift in Sources */,
 				F02D4D72765CA4B23384783F /* MainViewController.swift in Sources */,
 				2C230E8061C5E10234DFC2D2 /* MainModuleInput.swift in Sources */,
 				F8239DB3FCF641E24D6AC021 /* MainPresenter.swift in Sources */,

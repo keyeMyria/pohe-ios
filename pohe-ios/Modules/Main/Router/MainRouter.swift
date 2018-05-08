@@ -33,7 +33,7 @@ class MainRouter: MainRouterInput {
         
         view.presenter = presenter
         interactor.output = presenter
-        return view
+//        return view
         let nav = UINavigationController(rootViewController: view)
         return nav
     }

@@ -3,3 +3,8 @@ storyboards:
   templateName: swift4
   paths: ./pohe-ios/
   output: StoryBoards.swift
+colors:
+  paths:
+   - ./pohe-ios/colors.xml
+  templateName: swift4
+  output: Colors.swift

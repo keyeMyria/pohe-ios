@@ -19,18 +19,19 @@
                 <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFk-ff-X2W">
-                        <rect key="frame" x="10" y="14.5" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFk-ff-X2W">
+                        <rect key="frame" x="10" y="10" width="100" height="30"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iFk-ff-X2W" secondAttribute="trailing" constant="10" id="Uuv-hi-Cfb"/>
-                <constraint firstItem="iFk-ff-X2W" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="hyg-Ep-gUj"/>
-                <constraint firstItem="iFk-ff-X2W" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="lcq-Q7-dGo"/>
+                <constraint firstAttribute="bottom" secondItem="iFk-ff-X2W" secondAttribute="bottom" constant="10" id="Mq2-CX-cGW"/>
+                <constraint firstItem="iFk-ff-X2W" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="ae2-zr-oyM"/>
+                <constraint firstAttribute="trailing" secondItem="iFk-ff-X2W" secondAttribute="trailing" constant="10" id="baM-kI-Dcv"/>
+                <constraint firstItem="iFk-ff-X2W" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="uwH-VF-ND2"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="120" height="50"/>
