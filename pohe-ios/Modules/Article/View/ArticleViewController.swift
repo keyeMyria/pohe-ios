@@ -25,6 +25,7 @@ class ArticleViewController: UIViewController, IndicatorInfoProvider {
     var articles: [Article] = []
     var itemInfo = IndicatorInfo(title: "View")
     private let bag = DisposeBag()
+    private var refreshControl = UIRefreshControl()
 
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -39,20 +40,17 @@ class ArticleViewController: UIViewController, IndicatorInfoProvider {
         self.navigationItem.title = "記事"
         
         tableView.register(cellType: ArticleTableViewCell.self)
-//        tableView.estimatedRowHeight = 150
-//        tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.estimatedRowHeight = 120.0
-//        tableView.rowHeight = 150.0
-//        tableView.separatorInset = UIEdgeInsets.zero
-//        tableView.tableFooterView = UIView(frame: CGRect.zero)
         
         tableView.delegate = self
         tableView.dataSource = self
-//        tableView.refreshControl = refreshControl
-//        noDataLabel.isHidden = true
+        tableView.refreshControl = refreshControl
     }
     
     private func setupRx() {
+        refreshControl.rx.controlEvent(.valueChanged)
+            .subscribe(onNext: { [weak self] _ in self?.presenter.pullToRefresh() })
+            .disposed(by: bag)
+
          tableView.rx.reachedBottom
             .asObservable()
             .subscribe(onNext: { [weak self] _ in self?.presenter.reachedBottom() })
@@ -74,7 +72,7 @@ extension ArticleViewController: ArticleView {
     func showArticles(articles: [Article]) {
         self.articles = articles
         tableView.reloadData()
-//        refreshControl.endRefreshing()
+        refreshControl.endRefreshing()
     }
     
     func updateArticles(articles: [Article]) {
