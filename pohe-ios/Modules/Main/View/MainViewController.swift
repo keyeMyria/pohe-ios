@@ -11,13 +11,24 @@ import XLPagerTabStrip
 
 class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollectionViewCell> {
 
-    private let articles0 = ArticleRouter.assembleView("javascript")
-    private let articles1 = ArticleRouter.assembleView("php")
-    private let articles2 = ArticleRouter.assembleView("ruby")
-    private let articles3 = ArticleRouter.assembleView("python")
-    private let articles4 = ArticleRouter.assembleView("ios")
-    private let articles5 = ArticleRouter.assembleView("android")
-    private let articles6 = ArticleRouter.assembleView("design")
+    private let articles_array = [
+        ArticleRouter.assembleView("javascript"),
+        ArticleRouter.assembleView("php"),
+        ArticleRouter.assembleView("java"),
+        ArticleRouter.assembleView("ruby"),
+        ArticleRouter.assembleView("python"),
+        ArticleRouter.assembleView("objective-c"),
+//    private let articles4 = ArticleRouter.assembleView("ios")
+        ArticleRouter.assembleView("android"),
+        ArticleRouter.assembleView("design"),
+        ArticleRouter.assembleView("machine-learning"),
+        ArticleRouter.assembleView("programming"),
+        ArticleRouter.assembleView("windows"),
+        ArticleRouter.assembleView("gadget"),
+        ArticleRouter.assembleView("social"),
+        ArticleRouter.assembleView("security"),
+        ArticleRouter.assembleView("infrastructure")
+    ]
     
     var output: MainViewOutput!
     var presenter: MainPresentation!
@@ -71,7 +82,7 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollection
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let childViewControllers = [articles0, articles1, articles2,articles3, articles4, articles5, articles6]
+        let childViewControllers = articles_array
         return childViewControllers
     }
 }

@@ -30,11 +30,19 @@ class ArticleTableViewCell: UITableViewCell, NibReusable {
     
     func setupArticle(_ article: Article) {
         label.text = article.page.title
-        var url = URL(string: article.page.thumbnail ?? "https://www.pakutaso.com/shared/img/thumb/PAK85_graynohikari20141108124928_TP_V.jpg")!
-        Manager.shared.loadImage(with: url, into: samune, handler: { [weak self] (image: Result<UIImage>, _) in
+        self.samune?.backgroundColor = UIColor(named: .darkAccent)
+        guard let thumbnail = article.page.thumbnail else { return }
+        let url = URL(string: thumbnail)
+        Manager.shared.loadImage(with: url!, into: samune, handler: { [weak self] (image: Result<UIImage>, _) in
             guard let weakSelf = self, let image = image.value else { return }
             weakSelf.samune.image = image.cropping2square()
         })
+        
+//        var url = URL(string: article.page.thumbnail ?? "https://www.pakutaso.com/shared/img/thumb/PAK85_graynohikari20141108124928_TP_V.jpg")!
+//        Manager.shared.loadImage(with: url, into: samune, handler: { [weak self] (image: Result<UIImage>, _) in
+//            guard let weakSelf = self, let image = image.value else { return }
+//            weakSelf.samune.image = image.cropping2square()
+//        })
 
     }
     
