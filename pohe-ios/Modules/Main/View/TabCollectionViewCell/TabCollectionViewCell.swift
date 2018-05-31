@@ -22,7 +22,7 @@ final class TabCollectionViewCell: UICollectionViewCell {
     var text: String? {
         didSet {
             if let text = text {
-                titleLabel.text = text
+                titleLabel.text = text.uppercased()
             }
         }
     }

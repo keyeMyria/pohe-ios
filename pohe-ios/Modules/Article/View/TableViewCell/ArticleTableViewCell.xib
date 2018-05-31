@@ -28,9 +28,10 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5t-CX-hiX">
-                        <rect key="frame" x="125" y="21" width="43.5" height="42.5"/>
-                        <string key="text">Labelaaa</string>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <rect key="frame" x="125" y="21" width="37.5" height="38"/>
+                        <string key="text">Label
+aaa</string>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>

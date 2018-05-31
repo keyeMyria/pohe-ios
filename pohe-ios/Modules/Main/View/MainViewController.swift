@@ -11,23 +11,21 @@ import XLPagerTabStrip
 
 class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollectionViewCell> {
 
-    private let articles_array = [
-        ArticleRouter.assembleView("javascript"),
-        ArticleRouter.assembleView("php"),
-        ArticleRouter.assembleView("java"),
-        ArticleRouter.assembleView("ruby"),
-        ArticleRouter.assembleView("python"),
-        ArticleRouter.assembleView("objective-c"),
-//    private let articles4 = ArticleRouter.assembleView("ios")
-        ArticleRouter.assembleView("android"),
-        ArticleRouter.assembleView("design"),
-        ArticleRouter.assembleView("machine-learning"),
-        ArticleRouter.assembleView("programming"),
-        ArticleRouter.assembleView("windows"),
-        ArticleRouter.assembleView("gadget"),
-        ArticleRouter.assembleView("social"),
-        ArticleRouter.assembleView("security"),
-        ArticleRouter.assembleView("infrastructure")
+    private let categories = [
+        "javascript",
+        "php",
+        "java",
+        "ruby",
+        "python",
+        "objective-c",
+        "android",
+        "design",
+        "machine-learning",
+        "windows",
+        "gadget",
+        "social",
+        "security",
+        "infrastructure"
     ]
     
     var output: MainViewOutput!
@@ -40,7 +38,10 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollection
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         buttonBarItemSpec = .nibFile(nibName: String(describing: type(of: TabCollectionViewCell())), bundle: Bundle(for: TabCollectionViewCell.self), width: { cell in
-            return 100
+            guard let title = cell.title else {
+                return 70
+            }
+            return CGFloat(title.count * 10 + 20)
         })
         changeBarView()
     }
@@ -82,7 +83,7 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollection
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let childViewControllers = articles_array
+        let childViewControllers = self.categories.map { ArticleRouter.assembleView($0) }
         return childViewControllers
     }
 }
