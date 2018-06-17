@@ -18,6 +18,7 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollection
         "ruby",
         "python",
         "objective-c",
+        "ios",
         "android",
         "design",
         "machine-learning",
@@ -85,5 +86,25 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollection
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let childViewControllers = self.categories.map { ArticleRouter.assembleView($0) }
         return childViewControllers
+    }
+    
+    override func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int, withProgressPercentage progressPercentage: CGFloat, indexWasChanged: Bool) {
+        if progressPercentage >= 1.0 && !indexWasChanged {
+            let leftIndex = self.currentIndex - 1
+            let rightIndex = self.currentIndex + 1
+            if leftIndex >= 0 {
+                let c = viewControllers[leftIndex]
+                if !c.isViewLoaded {
+                    c.loadViewIfNeeded()
+                }
+            }
+            if rightIndex < self.viewControllers.count {
+                let c = viewControllers[rightIndex]
+                if !c.isViewLoaded {
+                    c.loadViewIfNeeded()
+                }
+            }
+        }
+        super.updateIndicator(for: viewController, fromIndex: fromIndex, toIndex: toIndex, withProgressPercentage: progressPercentage, indexWasChanged: indexWasChanged)
     }
 }

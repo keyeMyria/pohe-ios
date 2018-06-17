@@ -32,11 +32,10 @@ class ArticleTableViewCell: UITableViewCell, NibReusable {
         label.text = article.page.title
         self.samune?.backgroundColor = UIColor(named: .darkAccent)
         guard let thumbnail = article.page.thumbnail else { return }
-            let url = URL(string: thumbnail)
-            if (url != nil) {
-                Manager.shared.loadImage(with: url!, into: samune, handler: { [weak self] (image: Result<UIImage>, _) in
-                    guard let weakSelf = self, let image = image.value else { return }
-                    weakSelf.samune.image = image.cropping2square()
+        if let url = URL(string: thumbnail) {
+            Manager.shared.loadImage(with: url, into: samune, handler: { [weak self] (image: Result<UIImage>, _) in
+                guard let weakSelf = self, let image = image.value else { return }
+                weakSelf.samune.image = image.cropping2square()
             })
         }
     }
