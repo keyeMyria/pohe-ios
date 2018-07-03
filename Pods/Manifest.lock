@@ -18,7 +18,7 @@ PODS:
   - XLPagerTabStrip (8.0.1)
 
 DEPENDENCIES:
-  - APIKit
+  - APIKit (from `https://github.com/ishkawa/APIKit`, branch `master`)
   - LicensePlist
   - Nuke (~> 5.0)
   - Reusable
@@ -29,8 +29,31 @@ DEPENDENCIES:
   - SwiftLint
   - XLPagerTabStrip (~> 8.0.1)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - LicensePlist
+    - Nuke
+    - Result
+    - Reusable
+    - RxCocoa
+    - RxSwift
+    - SnapKit
+    - SwiftGen
+    - SwiftLint
+    - XLPagerTabStrip
+
+EXTERNAL SOURCES:
+  APIKit:
+    :branch: master
+    :git: https://github.com/ishkawa/APIKit
+
+CHECKOUT OPTIONS:
+  APIKit:
+    :commit: e5724dc54d9a2f294875d65241edb0cc41654a25
+    :git: https://github.com/ishkawa/APIKit
+
 SPEC CHECKSUMS:
-  APIKit: a39ff72ac44efc15513fd1b98800f63c525be61b
+  APIKit: 3660c3981a219c30e5113f0eab1ce23c42e43ed3
   LicensePlist: 3fda61ebe060afc8fc6d995df34a91401af5a244
   Nuke: 5f420c4637415f979c83afb35e73176dd03232d9
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
@@ -42,6 +65,6 @@ SPEC CHECKSUMS:
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
   XLPagerTabStrip: c908b17cbf42fcd2598ee1adfc49bae25444d88a
 
-PODFILE CHECKSUM: 9b495a61705b99651d79b095fef22dcbd5553d93
+PODFILE CHECKSUM: 03cd2b0e2ec0ee115036a652d547a2538c03f318
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

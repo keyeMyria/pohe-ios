@@ -10,8 +10,10 @@ def common_pods
   pod 'Nuke', '~> 5.0'
   pod 'SwiftGen'
   pod 'Reusable'
-  pod 'APIKit'
+  pod 'APIKit', :git => 'https://github.com/ishkawa/APIKit', :branch => 'master'
   pod 'XLPagerTabStrip', '~> 8.0.1'
+  pod 'RealmSwift'
+  pod 'Mattress', '~> 1.0.0'
 end
 
 target 'pohe-ios' do

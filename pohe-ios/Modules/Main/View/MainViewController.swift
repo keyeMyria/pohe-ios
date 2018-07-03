@@ -42,6 +42,9 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollection
             guard let title = cell.title else {
                 return 70
             }
+            if (title == "android") {
+                return CGFloat("android-java".count * 10 + 20)
+            }
             return CGFloat(title.count * 10 + 20)
         })
         changeBarView()

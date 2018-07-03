@@ -23,6 +23,9 @@ final class TabCollectionViewCell: UICollectionViewCell {
         didSet {
             if let text = text {
                 titleLabel.text = text.uppercased()
+                if  (text == "android") {
+                    titleLabel.text = "android-java".uppercased()
+                }
             }
         }
     }

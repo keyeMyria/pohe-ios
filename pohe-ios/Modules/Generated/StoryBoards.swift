@@ -74,6 +74,13 @@ enum StoryboardScene {
 
     static let initialScene = InitialSceneType<pohe_ios.MainViewController>(storyboard: MainViewController.self)
   }
+  enum Web: StoryboardType {
+    static let storyboardName = "Web"
+
+    static let initialScene = InitialSceneType<UINavigationController>(storyboard: Web.self)
+
+    static let webViewController = SceneType<pohe_ios.WebViewController>(storyboard: Web.self, identifier: "WebViewController")
+  }
 }
 
 enum StoryboardSegue {
