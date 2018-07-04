@@ -102,7 +102,7 @@ extension ArticleViewController: UITableViewDelegate {
         guard let nc = self.navigationController else {
             return
         }
-        WebViewUtil.showWKWebView(urlString: article.page.url, viewTitle: article.page.title, from: nc, disAppear: {})
+        WebViewUtil.showWKWebView(page: article.page, from: nc, disAppear: {})
 //        self.presenter.didSelect(with: tweet.user)
     }
 }

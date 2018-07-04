@@ -12,8 +12,8 @@ def common_pods
   pod 'Reusable'
   pod 'APIKit', :git => 'https://github.com/ishkawa/APIKit', :branch => 'master'
   pod 'XLPagerTabStrip', '~> 8.0.1'
-  pod 'RealmSwift'
-  pod 'Mattress', '~> 1.0.0'
+  pod 'RealmSwift', '~> 3.1.1'
+  pod 'Mattress', :git => 'https://github.com/CaptainTeemo/mattress', :branch => 'master'
 end
 
 target 'pohe-ios' do

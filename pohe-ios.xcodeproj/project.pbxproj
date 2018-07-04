@@ -50,6 +50,16 @@
 		ADE6A61920E0D935009C0B6E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE6A61820E0D934009C0B6E /* WebViewController.swift */; };
 		ADE6A61B20E47D3D009C0B6E /* Web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE6A61A20E47D3D009C0B6E /* Web.storyboard */; };
 		ADE6A62120EA5267009C0B6E /* UIViewController+ScrollingNavbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE6A62020EA5267009C0B6E /* UIViewController+ScrollingNavbar.swift */; };
+		ADE6A62320EB21FB009C0B6E /* PageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE6A62220EB21FB009C0B6E /* PageObject.swift */; };
+		ADE6A62520EB433F009C0B6E /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE6A62420EB433F009C0B6E /* RealmManager.swift */; };
+		ADE6A62820EB7700009C0B6E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE6A62720EB7700009C0B6E /* PageViewController.swift */; };
+		ADE6A62A20EB771E009C0B6E /* PageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE6A62920EB771E009C0B6E /* PageViewController.storyboard */; };
+		ADE6A62D20EB919C009C0B6E /* PageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE6A62B20EB919C009C0B6E /* PageTableViewCell.swift */; };
+		ADE6A62E20EB919C009C0B6E /* PageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE6A62C20EB919C009C0B6E /* PageTableViewCell.xib */; };
+		ADE6A63420EC5FE9009C0B6E /* LocalWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE6A63320EC5FE9009C0B6E /* LocalWebViewController.swift */; };
+		ADE6A63620EC5FFD009C0B6E /* LocalWeb.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE6A63520EC5FFD009C0B6E /* LocalWeb.storyboard */; };
+		ADE6A63820EC9F7A009C0B6E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE6A63720EC9F7A009C0B6E /* LoadingView.swift */; };
+		ADE6A63A20ECC3EB009C0B6E /* UIView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE6A63920ECC3EB009C0B6E /* UIView+Loading.swift */; };
 		B0EA13619BF57BA0EA72E5DA /* ArticlePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049A73E98C981F82E9EE15F2 /* ArticlePresenter.swift */; };
 		B38AB6A062F1CE9154FB9326 /* ArticleViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E95C591B821807FD4597CFC /* ArticleViewInput.swift */; };
 		DBEAD1A9FA6A6558FDDC15BE /* MainViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D63967240AA60CBBA1EF01 /* MainViewInput.swift */; };
@@ -121,6 +131,16 @@
 		ADE6A61820E0D934009C0B6E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		ADE6A61A20E47D3D009C0B6E /* Web.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Web.storyboard; sourceTree = "<group>"; };
 		ADE6A62020EA5267009C0B6E /* UIViewController+ScrollingNavbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ScrollingNavbar.swift"; sourceTree = "<group>"; };
+		ADE6A62220EB21FB009C0B6E /* PageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageObject.swift; sourceTree = "<group>"; };
+		ADE6A62420EB433F009C0B6E /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		ADE6A62720EB7700009C0B6E /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		ADE6A62920EB771E009C0B6E /* PageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PageViewController.storyboard; sourceTree = "<group>"; };
+		ADE6A62B20EB919C009C0B6E /* PageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTableViewCell.swift; sourceTree = "<group>"; };
+		ADE6A62C20EB919C009C0B6E /* PageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageTableViewCell.xib; sourceTree = "<group>"; };
+		ADE6A63320EC5FE9009C0B6E /* LocalWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalWebViewController.swift; sourceTree = "<group>"; };
+		ADE6A63520EC5FFD009C0B6E /* LocalWeb.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocalWeb.storyboard; sourceTree = "<group>"; };
+		ADE6A63720EC9F7A009C0B6E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		ADE6A63920ECC3EB009C0B6E /* UIView+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Loading.swift"; sourceTree = "<group>"; };
 		B2DD7072E13853E8539EFDFA /* ArticleRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ArticleRouter.swift; sourceTree = "<group>"; };
 		B75A3BEC92FDC61EFDDCAF47 /* MainRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		BC92A10EFA41A99A899FA145 /* Pods-pohe-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pohe-iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pohe-iosUITests/Pods-pohe-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -219,6 +239,9 @@
 				4E17D6F320906E1700395347 /* UIImageViewExtension.swift */,
 				4E17D6F52090817900395347 /* WebViewUtil.swift */,
 				ADE6A62020EA5267009C0B6E /* UIViewController+ScrollingNavbar.swift */,
+				ADE6A62420EB433F009C0B6E /* RealmManager.swift */,
+				ADE6A63720EC9F7A009C0B6E /* LoadingView.swift */,
+				ADE6A63920ECC3EB009C0B6E /* UIView+Loading.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -312,6 +335,7 @@
 				4EB45F22208DDD0400BB64E5 /* Article.swift */,
 				4E17D6E6208F1E2C00395347 /* ArticleList.swift */,
 				4E17D6EF208F2F0700395347 /* Page.swift */,
+				ADE6A62220EB21FB009C0B6E /* PageObject.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -351,8 +375,21 @@
 			children = (
 				ADE6A61820E0D934009C0B6E /* WebViewController.swift */,
 				ADE6A61A20E47D3D009C0B6E /* Web.storyboard */,
+				ADE6A63320EC5FE9009C0B6E /* LocalWebViewController.swift */,
+				ADE6A63520EC5FFD009C0B6E /* LocalWeb.storyboard */,
 			);
 			path = Web;
+			sourceTree = "<group>";
+		};
+		ADE6A62620EB76E4009C0B6E /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				ADE6A62720EB7700009C0B6E /* PageViewController.swift */,
+				ADE6A62920EB771E009C0B6E /* PageViewController.storyboard */,
+				ADE6A62B20EB919C009C0B6E /* PageTableViewCell.swift */,
+				ADE6A62C20EB919C009C0B6E /* PageTableViewCell.xib */,
+			);
+			path = Page;
 			sourceTree = "<group>";
 		};
 		D962982135B747A2316BF164 /* Router */ = {
@@ -408,6 +445,7 @@
 		FE566791879A3630097DE45B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				ADE6A62620EB76E4009C0B6E /* Page */,
 				ADE6A61720E0D918009C0B6E /* Web */,
 				4E17D6DC208ED8E800395347 /* Generated */,
 				9582F06BCC87B0E8BC6DA31B /* Article */,
@@ -507,8 +545,11 @@
 			files = (
 				ADE6A61B20E47D3D009C0B6E /* Web.storyboard in Resources */,
 				4E17D6EB208F248500395347 /* ArticleTableViewCell.xib in Resources */,
+				ADE6A62E20EB919C009C0B6E /* PageTableViewCell.xib in Resources */,
+				ADE6A63620EC5FFD009C0B6E /* LocalWeb.storyboard in Resources */,
 				4E17D702209167B900395347 /* TabCollectionViewCell.xib in Resources */,
 				4EB45EFE208DC5F000BB64E5 /* LaunchScreen.storyboard in Resources */,
+				ADE6A62A20EB771E009C0B6E /* PageViewController.storyboard in Resources */,
 				4EF0289220A18E920016810D /* colors.xml in Resources */,
 				4EB45F17208DCB9A00BB64E5 /* ArticleViewController.storyboard in Resources */,
 				4EB45EFB208DC5F000BB64E5 /* Assets.xcassets in Resources */,
@@ -584,7 +625,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-pohe-iosUITests/Pods-pohe-iosUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/APIKit/APIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Mattress/Mattress.framework",
 				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -595,7 +639,10 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mattress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -616,7 +663,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-pohe-ios/Pods-pohe-ios-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/APIKit/APIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Mattress/Mattress.framework",
 				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -627,7 +677,10 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mattress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -648,12 +701,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EB45EF6208DC5F000BB64E5 /* ViewController.swift in Sources */,
+				ADE6A63A20ECC3EB009C0B6E /* UIView+Loading.swift in Sources */,
+				ADE6A62820EB7700009C0B6E /* PageViewController.swift in Sources */,
 				4EB45F14208DCA4A00BB64E5 /* RootRouter.swift in Sources */,
 				4EB45EF4208DC5F000BB64E5 /* AppDelegate.swift in Sources */,
 				4E17D6F62090817900395347 /* WebViewUtil.swift in Sources */,
 				B38AB6A062F1CE9154FB9326 /* ArticleViewInput.swift in Sources */,
 				4EB45F23208DDD0400BB64E5 /* Article.swift in Sources */,
 				4EB45F1C208DD16E00BB64E5 /* RestAPI.swift in Sources */,
+				ADE6A63820EC9F7A009C0B6E /* LoadingView.swift in Sources */,
 				4EB45F1E208DD3C500BB64E5 /* PaginationRequest.swift in Sources */,
 				60487768D852563F15FC8B47 /* ArticleViewOutput.swift in Sources */,
 				4EB45F1A208DCF3200BB64E5 /* RestClient+Rx.swift in Sources */,
@@ -663,10 +719,12 @@
 				49C3EE99B51F34C9416CDFF2 /* ArticleInteractorInput.swift in Sources */,
 				E8F5E2719E1C946CE5D4E738 /* ArticleInteractorOutput.swift in Sources */,
 				4E17D6F420906E1700395347 /* UIImageViewExtension.swift in Sources */,
+				ADE6A62520EB433F009C0B6E /* RealmManager.swift in Sources */,
 				8151D34AC28DD821F8B49FD0 /* ArticleInteractor.swift in Sources */,
 				4E17D6E0208EDB7B00395347 /* StoryBoards.swift in Sources */,
 				4E17D6E7208F1E2C00395347 /* ArticleList.swift in Sources */,
 				ADE6A61920E0D935009C0B6E /* WebViewController.swift in Sources */,
+				ADE6A62D20EB919C009C0B6E /* PageTableViewCell.swift in Sources */,
 				4EB45F20208DD43100BB64E5 /* RequestType.swift in Sources */,
 				52DAC8AD4E47C1E4E11C41C7 /* ArticleRouterInput.swift in Sources */,
 				4E17D6F0208F2F0700395347 /* Page.swift in Sources */,
@@ -678,6 +736,7 @@
 				4EF0289420A193B70016810D /* Colors.swift in Sources */,
 				F02D4D72765CA4B23384783F /* MainViewController.swift in Sources */,
 				2C230E8061C5E10234DFC2D2 /* MainModuleInput.swift in Sources */,
+				ADE6A62320EB21FB009C0B6E /* PageObject.swift in Sources */,
 				ADE6A62120EA5267009C0B6E /* UIViewController+ScrollingNavbar.swift in Sources */,
 				F8239DB3FCF641E24D6AC021 /* MainPresenter.swift in Sources */,
 				4D116C51AD686064928CA08F /* MainInteractorInput.swift in Sources */,
@@ -686,6 +745,7 @@
 				4DE7E39DF725ED0F57424ED9 /* MainInteractor.swift in Sources */,
 				E924094C301884369D7391DB /* MainRouterInput.swift in Sources */,
 				5B61EDDC4AA19D032E442C77 /* MainRouter.swift in Sources */,
+				ADE6A63420EC5FE9009C0B6E /* LocalWebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

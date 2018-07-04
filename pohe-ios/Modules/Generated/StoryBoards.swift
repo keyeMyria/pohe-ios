@@ -64,6 +64,13 @@ enum StoryboardScene {
 
     static let initialScene = InitialSceneType<UIViewController>(storyboard: LaunchScreen.self)
   }
+  enum LocalWeb: StoryboardType {
+    static let storyboardName = "LocalWeb"
+
+    static let initialScene = InitialSceneType<UINavigationController>(storyboard: LocalWeb.self)
+
+    static let localWebViewController = SceneType<pohe_ios.LocalWebViewController>(storyboard: LocalWeb.self, identifier: "LocalWebViewController")
+  }
   enum Main: StoryboardType {
     static let storyboardName = "Main"
 
@@ -73,6 +80,13 @@ enum StoryboardScene {
     static let storyboardName = "MainViewController"
 
     static let initialScene = InitialSceneType<pohe_ios.MainViewController>(storyboard: MainViewController.self)
+  }
+  enum PageViewController: StoryboardType {
+    static let storyboardName = "PageViewController"
+
+    static let initialScene = InitialSceneType<UINavigationController>(storyboard: PageViewController.self)
+
+    static let pageViewController = SceneType<pohe_ios.PageViewController>(storyboard: PageViewController.self, identifier: "PageViewController")
   }
   enum Web: StoryboardType {
     static let storyboardName = "Web"

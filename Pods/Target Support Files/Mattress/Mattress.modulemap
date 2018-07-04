@@ -1,0 +1,6 @@
+framework module Mattress {
+  umbrella header "Mattress-umbrella.h"
+
+  export *
+  module * { export * }
+}

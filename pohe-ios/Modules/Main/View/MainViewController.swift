@@ -8,6 +8,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import RxSwift
 
 class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollectionViewCell> {
 
@@ -31,6 +32,7 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollection
     
     var output: MainViewOutput!
     var presenter: MainPresentation!
+    private let disposeBag = DisposeBag()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -67,8 +69,26 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollection
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         super.viewDidLoad()
         self.navigationItem.title = "Pohe"
+        self.setButton()
+        
     }
     
+    private func setButton() {
+        let bookmark = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: nil, action: nil)
+        self.navigationItem.rightBarButtonItem = bookmark
+        bookmark.tintColor = .white
+        bookmark.rx.tap.subscribe(onNext: {[weak self] in
+            self?.goPages()
+        }).disposed(by: disposeBag)
+    }
+    
+    private func goPages() {
+        PageViewController().initPages()
+        let nc = PageViewController().initPages()
+        self.navigationController?.present(nc, animated: true, completion: nil)
+    }
+    
+
     // タブの文字色を変更
     private func changeBarView() {
         changeCurrentIndexProgressive = { (oldCell: TabCollectionViewCell?, newCell: TabCollectionViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
