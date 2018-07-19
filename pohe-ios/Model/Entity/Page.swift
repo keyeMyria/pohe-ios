@@ -13,12 +13,16 @@ struct Page: Codable {
     let url: String
     let title :String
     let thumbnail: String?
+    let timestamp: Date?
+    let site_name: String?
 
     public enum CodingKeys: String, CodingKey {
         case _id
         case url
         case title
         case thumbnail = "thumbnail"
+        case timestamp
+        case site_name = "site_name"
     }
     
 }

@@ -16,6 +16,7 @@ class PageTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet weak var samune: UIImageView!
     
     @IBOutlet weak var label: UILabel!
+//    @IBOutlet weak var time: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

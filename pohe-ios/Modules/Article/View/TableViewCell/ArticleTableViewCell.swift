@@ -17,6 +17,10 @@ class ArticleTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet weak var samune: UIImageView!
     @IBOutlet weak var label: UILabel!
     
+    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var site: UILabel!
+    @IBOutlet weak var point: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,8 +33,15 @@ class ArticleTableViewCell: UITableViewCell, NibReusable {
     }
     
     func setupArticle(_ article: Article) {
-        label.text = article.page.title
+        label.text = article.page.title.trimmingCharacters(in: .whitespacesAndNewlines)
         self.samune?.backgroundColor = UIColor(named: .darkAccent)
+        samune.layer.shadowColor = UIColor.black.cgColor
+        samune.layer.shadowOffset = .zero
+        samune.layer.shadowOpacity = 0.1
+//        samune.layer.shadowRadius = 4
+        time.text = Date.human(date: article.page.timestamp!)
+        site.text = article.page.site_name
+        point.text = String(repeating: "⭐️", count: article.score)
         guard let thumbnail = article.page.thumbnail else { return }
         if let url = URL(string: thumbnail) {
             Manager.shared.loadImage(with: url, into: samune, handler: { [weak self] (image: Result<UIImage>, _) in
@@ -39,4 +50,5 @@ class ArticleTableViewCell: UITableViewCell, NibReusable {
             })
         }
     }
+
 }

@@ -59,6 +59,13 @@ enum StoryboardScene {
 
     static let initialScene = InitialSceneType<pohe_ios.ArticleViewController>(storyboard: ArticleViewController.self)
   }
+  enum History: StoryboardType {
+    static let storyboardName = "History"
+
+    static let initialScene = InitialSceneType<UINavigationController>(storyboard: History.self)
+
+    static let historyViewController = SceneType<pohe_ios.HistoryViewController>(storyboard: History.self, identifier: "HistoryViewController")
+  }
   enum LaunchScreen: StoryboardType {
     static let storyboardName = "LaunchScreen"
 
@@ -81,6 +88,18 @@ enum StoryboardScene {
 
     static let initialScene = InitialSceneType<pohe_ios.MainViewController>(storyboard: MainViewController.self)
   }
+  enum Menu: StoryboardType {
+    static let storyboardName = "Menu"
+
+    static let initialScene = InitialSceneType<UINavigationController>(storyboard: Menu.self)
+
+    static let menuViewController = SceneType<pohe_ios.MenuViewController>(storyboard: Menu.self, identifier: "MenuViewController")
+  }
+  enum OpenSource: StoryboardType {
+    static let storyboardName = "OpenSource"
+
+    static let initialScene = InitialSceneType<UINavigationController>(storyboard: OpenSource.self)
+  }
   enum PageViewController: StoryboardType {
     static let storyboardName = "PageViewController"
 
@@ -98,6 +117,11 @@ enum StoryboardScene {
 }
 
 enum StoryboardSegue {
+  enum Menu: String, SegueType {
+    case showBookmark
+    case showHistory
+    case showOpenSource
+  }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name
 

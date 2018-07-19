@@ -9,7 +9,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import Mattress
 
 class PageViewController: UIViewController {
     
@@ -91,12 +90,7 @@ extension PageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let page = pages[indexPath.row]
-        guard let nc = self.navigationController else {
-            return
-        }
         self.showBookMark(page: page)
-//        WebViewUtil.showWKWebView(page: article.page, from: nc, disAppear: {})
-        //        self.presenter.didSelect(with: tweet.user)
     }
 }
 

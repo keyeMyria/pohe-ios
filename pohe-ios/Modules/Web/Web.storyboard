@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" id="pXb-HL-4iF">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Ja5-uA-hMv"/>
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="action" id="jEj-bn-Ovj"/>
+                            <barButtonItem style="done" systemItem="action" id="jEj-bn-Ovj"/>
                             <barButtonItem systemItem="bookmarks" id="ovz-IA-yfF"/>
                         </rightBarButtonItems>
                     </navigationItem>

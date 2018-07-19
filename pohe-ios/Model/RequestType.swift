@@ -63,6 +63,7 @@ extension RestRequest where Response: Codable {
             throw ResponseError.unexpectedObject(object)
         }
         let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(Date.ISO8601Formatter)
         return try decoder.decode(Response.self, from: data)
     }
     
@@ -79,6 +80,7 @@ extension RestRequest where Response: Codable, Response: Sequence, Response.Elem
             throw ResponseError.unexpectedObject(object)
         }
         let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(Date.ISO8601Formatter)
         return try decoder.decode(Response.self, from: data)
     }
     

@@ -13,7 +13,6 @@ def common_pods
   pod 'APIKit', :git => 'https://github.com/ishkawa/APIKit', :branch => 'master'
   pod 'XLPagerTabStrip', '~> 8.0.1'
   pod 'RealmSwift', '~> 3.1.1'
-  pod 'Mattress', :git => 'https://github.com/CaptainTeemo/mattress', :branch => 'master'
 end
 
 target 'pohe-ios' do
@@ -22,4 +21,10 @@ end
 
 target 'pohe-iosUITests' do
   common_pods
+end
+
+post_install do | installer |
+    require 'fileutils'
+    FileUtils.cp_r('Pods/Target Support Files/Pods-pohe-ios/Pods-pohe-ios-acknowledgements.plist', 'pohe-ios/Settings.bundle/Acknowledgements.plist', :remove_destination => true)
+    
 end

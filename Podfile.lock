@@ -2,7 +2,6 @@ PODS:
   - APIKit (3.2.1):
     - Result (~> 3.0)
   - LicensePlist (1.8.3)
-  - Mattress (1.0.3)
   - Nuke (5.2)
   - Realm (3.1.1):
     - Realm/Headers (= 3.1.1)
@@ -26,7 +25,6 @@ PODS:
 DEPENDENCIES:
   - APIKit (from `https://github.com/ishkawa/APIKit`, branch `master`)
   - LicensePlist
-  - Mattress (from `https://github.com/CaptainTeemo/mattress`, branch `master`)
   - Nuke (~> 5.0)
   - RealmSwift (~> 3.1.1)
   - Reusable
@@ -56,22 +54,15 @@ EXTERNAL SOURCES:
   APIKit:
     :branch: master
     :git: https://github.com/ishkawa/APIKit
-  Mattress:
-    :branch: master
-    :git: https://github.com/CaptainTeemo/mattress
 
 CHECKOUT OPTIONS:
   APIKit:
     :commit: e5724dc54d9a2f294875d65241edb0cc41654a25
     :git: https://github.com/ishkawa/APIKit
-  Mattress:
-    :commit: e2a01125763183aabea8a7782c3d89ee76389f67
-    :git: https://github.com/CaptainTeemo/mattress
 
 SPEC CHECKSUMS:
   APIKit: 3660c3981a219c30e5113f0eab1ce23c42e43ed3
   LicensePlist: 3fda61ebe060afc8fc6d995df34a91401af5a244
-  Mattress: 84d357dea96bed90165d3d6112d3e201a53f3337
   Nuke: 5f420c4637415f979c83afb35e73176dd03232d9
   Realm: 42d1c38a5b1bbcc828b48a7ce702cb86fc68adf4
   RealmSwift: d31937ca6a6ee54acde64ec839523c0a3c04924b
@@ -84,6 +75,6 @@ SPEC CHECKSUMS:
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
   XLPagerTabStrip: c908b17cbf42fcd2598ee1adfc49bae25444d88a
 
-PODFILE CHECKSUM: 58355cd7f443c0f57f68aacd2ced20c9fc501bfb
+PODFILE CHECKSUM: 5aad095d3a305aacc428621aa0e18715837706db
 
 COCOAPODS: 1.5.3

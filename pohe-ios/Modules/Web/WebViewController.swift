@@ -7,7 +7,6 @@
 import UIKit
 import WebKit
 import RxSwift
-import Mattress
 
 final class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     @IBOutlet weak var container: UIView!
@@ -20,13 +19,13 @@ final class WebViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
     private var webView: WKWebView!
     private var url: String = ""
     private var page: Page? = nil
+    private var mutableRequest: NSMutableURLRequest!
     
     let isWebViewClose = PublishSubject<Void>()
     private let disposeBag = DisposeBag()
     
     override func loadView() {
         super.loadView()
-//        view.showBlurLoader()
         setupWebView()
     }
     
@@ -47,7 +46,6 @@ final class WebViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        setNeedsStatusBarAppearanceUpdate()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -66,13 +64,17 @@ final class WebViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
         webView.allowsBackForwardNavigationGestures = true
         webView.uiDelegate = self
         webView.navigationDelegate = self
+//        webView.frame = CGRect(origin: .zero, size: container.frame.size)
         
         container.addSubview(webView)
-        guard let url = URL(string: self.url) else {
+        guard let url = NSURL(string: self.url) else {
             return
         }
-        let request = URLRequest(url: url)
-        webView.load(request)
+        
+        let request = NSURLRequest(url: url as URL) as URLRequest?
+        mutableRequest = request as! NSMutableURLRequest
+        URLProtocol.setProperty(true, forKey: "", in: mutableRequest)
+        webView.load(mutableRequest as URLRequest)
     }
     
     private func setupButton() {
@@ -98,24 +100,23 @@ final class WebViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
     
     private func saveCache() {
         RealmManager.addEntity(object: PageObject(page:page!))
-        if let cache = NSURLCache.shared as? Mattress.URLCache, let urlToCache = URL(string: self.url) {
-            cache.diskCacheURL(url: urlToCache, loadedHandler: { (webView) -> (Bool) in
-                let state = webView.stringByEvaluatingJavaScript(from: "document.readyState")
-                if state == "complete" {
-                    // Loading is done once we've returned true
-                    return true
-                }
-                return false
-            }, completeHandler: { () -> Void in
-                print("Finished caching")
-            }, failureHandler: { (error) -> Void in
-                print("Error caching: %@", error)
-            })
+        guard let url = NSURL(string: page!.url) else {
+            return
         }
+        let cache = URLCache.shared
+        let data = NSData.init(contentsOf: url as URL)
+        let urlResponse = URLResponse(url: url as URL,
+                                      mimeType: "text/html",
+                                      expectedContentLength: 0,
+                                      textEncodingName: "UTF-8")
+        let response = CachedURLResponse.init(response: urlResponse, data: data! as Data, userInfo: nil, storagePolicy: .allowed)
+        let myrequest = mutableRequest as URLRequest
+        cache.storeCachedResponse(response, for: myrequest)
+        showToast(message: "Bookmarked!")
     }
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        view.showBlurLoader()
+//        view.showBlurLoader()
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -133,6 +134,7 @@ final class WebViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
 //            
 //        })
     }
+
 }
 
 extension WebViewController {
@@ -153,5 +155,6 @@ extension WebViewController {
 
         return nc
     }
+
 }
 

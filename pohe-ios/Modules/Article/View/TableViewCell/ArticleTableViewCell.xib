@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,27 +29,58 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5t-CX-hiX">
-                        <rect key="frame" x="125" y="21" width="37.5" height="38"/>
+                        <rect key="frame" x="125" y="13" width="41.5" height="38.5"/>
                         <string key="text">Label
 aaa</string>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                         <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5E-N3-HIe">
+                        <rect key="frame" x="125" y="92" width="265.5" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeA-Z8-8tf">
+                        <rect key="frame" x="125" y="74.5" width="421" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.52233701944351196" green="0.74262458086013794" blue="0.70239979028701782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiR-wx-wMS">
+                        <rect key="frame" x="400.5" y="95" width="149.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="q5t-CX-hiX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="0hv-YZ-WL2"/>
                     <constraint firstItem="BJ5-PU-Fsm" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="1EI-T6-emC"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="q5t-CX-hiX" secondAttribute="trailing" constant="16" id="5aL-Jy-1T2"/>
+                    <constraint firstItem="JeA-Z8-8tf" firstAttribute="leading" secondItem="BJ5-PU-Fsm" secondAttribute="trailing" constant="10" id="3Yf-3K-Keg"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="o5E-N3-HIe" secondAttribute="bottom" constant="2" id="4xa-S3-mfP"/>
+                    <constraint firstItem="q5t-CX-hiX" firstAttribute="leading" secondItem="BJ5-PU-Fsm" secondAttribute="trailing" constant="10" id="Dts-5m-BnO"/>
+                    <constraint firstItem="JiR-wx-wMS" firstAttribute="top" secondItem="JeA-Z8-8tf" secondAttribute="bottom" constant="6" id="G83-iy-suK"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="q5t-CX-hiX" secondAttribute="trailing" constant="16" id="N7a-Gu-3cG"/>
+                    <constraint firstItem="o5E-N3-HIe" firstAttribute="leading" secondItem="BJ5-PU-Fsm" secondAttribute="trailing" constant="10" id="SKr-zb-hhU"/>
+                    <constraint firstAttribute="trailing" secondItem="JiR-wx-wMS" secondAttribute="trailing" constant="16" id="a1B-2K-Dsd"/>
+                    <constraint firstAttribute="bottom" secondItem="JiR-wx-wMS" secondAttribute="bottom" constant="10" id="an6-C7-mTq"/>
                     <constraint firstItem="BJ5-PU-Fsm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="bdv-G8-z2e"/>
-                    <constraint firstItem="q5t-CX-hiX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="hwb-08-KW2"/>
-                    <constraint firstItem="q5t-CX-hiX" firstAttribute="leading" secondItem="BJ5-PU-Fsm" secondAttribute="trailing" constant="10" id="mRv-vG-bGP"/>
+                    <constraint firstItem="JeA-Z8-8tf" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="ffV-qX-ccU"/>
+                    <constraint firstItem="JiR-wx-wMS" firstAttribute="leading" secondItem="o5E-N3-HIe" secondAttribute="trailing" constant="10" id="iiP-Po-Djp"/>
+                    <constraint firstItem="o5E-N3-HIe" firstAttribute="width" secondItem="JiR-wx-wMS" secondAttribute="width" multiplier="16:9" id="tQT-WF-M2k"/>
                     <constraint firstItem="BJ5-PU-Fsm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="x1G-jk-KRr"/>
                 </constraints>
             </tableViewCellContentView>
+            <gestureRecognizers/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="label" destination="q5t-CX-hiX" id="CDe-fr-DmN"/>
+                <outlet property="point" destination="JeA-Z8-8tf" id="Y00-Kb-1c4"/>
                 <outlet property="samune" destination="BJ5-PU-Fsm" id="pbz-MT-EgX"/>
+                <outlet property="site" destination="o5E-N3-HIe" id="Wog-CH-3Uw"/>
+                <outlet property="time" destination="JiR-wx-wMS" id="oQg-XW-jlg"/>
             </connections>
             <point key="canvasLocation" x="-89" y="184"/>
         </tableViewCell>

@@ -24,6 +24,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="4jU-yt-UJS" firstAttribute="trailing" secondItem="6Xv-ON-7Zr" secondAttribute="trailing" id="32C-nc-ERZ"/>
                             <constraint firstItem="4jU-yt-UJS" firstAttribute="leading" secondItem="6Xv-ON-7Zr" secondAttribute="leading" id="EhK-Zv-VN2"/>

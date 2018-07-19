@@ -18,17 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="age-jI-TeX">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IjR-Ab-mrL">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="v8a-gd-rrt" firstAttribute="bottom" secondItem="age-jI-TeX" secondAttribute="bottom" id="RDH-2j-iRt"/>
-                            <constraint firstItem="v8a-gd-rrt" firstAttribute="trailing" secondItem="age-jI-TeX" secondAttribute="trailing" id="w3E-Qp-FGE"/>
-                            <constraint firstItem="age-jI-TeX" firstAttribute="top" secondItem="v8a-gd-rrt" secondAttribute="top" id="zY7-GQ-ejk"/>
-                            <constraint firstItem="age-jI-TeX" firstAttribute="leading" secondItem="v8a-gd-rrt" secondAttribute="leading" id="zwt-DP-g6v"/>
+                            <constraint firstItem="v8a-gd-rrt" firstAttribute="trailing" secondItem="IjR-Ab-mrL" secondAttribute="trailing" id="Fkc-3T-hK6"/>
+                            <constraint firstItem="IjR-Ab-mrL" firstAttribute="leading" secondItem="v8a-gd-rrt" secondAttribute="leading" id="a4i-YA-nBG"/>
+                            <constraint firstItem="IjR-Ab-mrL" firstAttribute="top" secondItem="v8a-gd-rrt" secondAttribute="top" id="enK-Wq-5m2"/>
+                            <constraint firstItem="v8a-gd-rrt" firstAttribute="bottom" secondItem="IjR-Ab-mrL" secondAttribute="bottom" id="x2r-aM-v2O"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v8a-gd-rrt"/>
                     </view>
@@ -38,8 +38,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cancel" destination="ZAs-Lq-htx" id="kGt-lB-Eue"/>
+                        <outlet property="container" destination="IjR-Ab-mrL" id="TAV-r9-bwR"/>
                         <outlet property="share" destination="P45-Bu-XCc" id="hbP-is-NKJ"/>
-                        <outlet property="webView" destination="age-jI-TeX" id="cRB-9m-UHI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G1A-YM-gBz" userLabel="First Responder" sceneMemberID="firstResponder"/>

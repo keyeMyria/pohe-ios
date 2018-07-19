@@ -26,6 +26,8 @@ class ArticleViewController: UIViewController, IndicatorInfoProvider {
     var itemInfo = IndicatorInfo(title: "View")
     private let bag = DisposeBag()
     private var refreshControl = UIRefreshControl()
+    private lazy var longPressRecognizer: UILongPressGestureRecognizer =
+        UILongPressGestureRecognizer(target: self, action: .cellLongPressed)
 
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -34,6 +36,7 @@ class ArticleViewController: UIViewController, IndicatorInfoProvider {
         setupRx()
 //        output.viewIsReady()
         presenter.viewDidLoad()
+        setupRecognizer()
     }
     
     private func setupView() {
@@ -64,6 +67,26 @@ class ArticleViewController: UIViewController, IndicatorInfoProvider {
     func set(itemInfo: IndicatorInfo) {
         self.itemInfo = itemInfo
     }
+    
+    private func saveCache(article: Article) {
+        RealmManager.addEntity(object: PageObject(page:article.page))
+        guard let url = NSURL(string: article.page.url) else {
+            return
+        }
+        let cache = URLCache.shared
+        let data = NSData.init(contentsOf: url as URL)
+        let urlResponse = URLResponse(url: url as URL,
+                                      mimeType: "text/html",
+                                      expectedContentLength: 0,
+                                      textEncodingName: "UTF-8")
+        let response = CachedURLResponse.init(response: urlResponse, data: data! as Data, userInfo: nil, storagePolicy: .allowed)
+        let request = NSURLRequest(url: url as URL) as URLRequest?
+        let mutableRequest = request as! NSMutableURLRequest
+        URLProtocol.setProperty(true, forKey: "", in: mutableRequest)
+        let myrequest = mutableRequest as URLRequest
+        cache.storeCachedResponse(response, for: myrequest)
+        showToast(message: "Bookmarked!")
+    }
 
 }
 
@@ -90,8 +113,20 @@ extension ArticleViewController: UITableViewDataSource {
         let cell: ArticleTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         cell.samune.image = nil
         cell.setupArticle(articles[indexPath.row])
+//        let longPress =
+//            UILongPressGestureRecognizer(target: self, action: Selector("cellLongPressed:"))
+//        cell.addGestureRecognizer(longPress);
         return cell
     }
+    
+//    func cellLongPressed(recognizer: UILongPressGestureRecognizer) {
+//        let point = recognizer.location(in: tableView)
+//        let indexPath = tableView.indexPathForRow(at: point)
+//        let article = articles[(indexPath?.row)!]
+//        if recognizer.state == UIGestureRecognizerState.began {
+//            saveCache(article: article)
+//        }
+//    }
 
 }
 
@@ -102,7 +137,35 @@ extension ArticleViewController: UITableViewDelegate {
         guard let nc = self.navigationController else {
             return
         }
+        RealmManager.addEntity(object: HistoryObject(p: article.page))
         WebViewUtil.showWKWebView(page: article.page, from: nc, disAppear: {})
-//        self.presenter.didSelect(with: tweet.user)
     }
+}
+
+extension ArticleViewController: UIGestureRecognizerDelegate {
+
+    private func setupRecognizer() {
+        longPressRecognizer.delegate = self
+        tableView.addGestureRecognizer(longPressRecognizer)
+    }
+
+    @objc func cellLongPressed(recognizer: UILongPressGestureRecognizer) {
+        let isAllow = UserDefaults.standard.bool(forKey: "longPress")
+        if (!isAllow) {
+            return
+        }
+        
+        let point = recognizer.location(in: tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        let article = articles[(indexPath?.row)!]
+        
+        if recognizer.state == UIGestureRecognizerState.began {
+            saveCache(article: article)
+        }
+    }
+}
+
+private extension Selector {
+    
+    static let cellLongPressed = #selector(ArticleViewController.cellLongPressed(recognizer:))
 }

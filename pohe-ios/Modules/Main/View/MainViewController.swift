@@ -19,15 +19,17 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollection
         "ruby",
         "python",
         "objective-c",
-        "ios",
-        "android",
+        "programming",
         "design",
-        "machine-learning",
+        "android",
+        "ios",
         "windows",
+        "machine-learning",
         "gadget",
         "social",
         "security",
-        "infrastructure"
+        "infrastructure",
+        "iot"
     ]
     
     var output: MainViewOutput!
@@ -74,17 +76,26 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollection
     }
     
     private func setButton() {
-        let bookmark = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: nil, action: nil)
-        self.navigationItem.rightBarButtonItem = bookmark
-        bookmark.tintColor = .white
-        bookmark.rx.tap.subscribe(onNext: {[weak self] in
-            self?.goPages()
+//        let bookmark = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: nil, action: nil)
+        let organize = UIBarButtonItem(barButtonSystemItem: .organize, target: nil, action: nil)
+        self.navigationItem.rightBarButtonItems = [organize]
+//        bookmark.tintColor = .white
+        organize.tintColor = .white
+//        bookmark.rx.tap.subscribe(onNext: {[weak self] in
+//            self?.goPages()
+//        }).disposed(by: disposeBag)
+        organize.rx.tap.subscribe(onNext: {[weak self] in
+            self?.goMenu()
         }).disposed(by: disposeBag)
     }
     
     private func goPages() {
-        PageViewController().initPages()
         let nc = PageViewController().initPages()
+        self.navigationController?.present(nc, animated: true, completion: nil)
+    }
+    
+    private func goMenu() {
+        let nc = MenuViewController().initPages()
         self.navigationController?.present(nc, animated: true, completion: nil)
     }
     
