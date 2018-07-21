@@ -50,7 +50,17 @@ class PageTableViewCell: UITableViewCell, NibReusable {
         if let url = URL(string: page.thumbnail) {
             Manager.shared.loadImage(with: url, into: samune, handler: { [weak self] (image: Result<UIImage>, _) in
                 guard let weakSelf = self, let image = image.value else { return }
-                weakSelf.samune.image = image.cropping2trangle()
+                let filteredImage = CIImage(image: image)
+                let filter = CIFilter(name: "CIVignette")
+                
+                filter!.setValue(filteredImage, forKey: "inputImage")
+                filter!.setValue(NSNumber(value: 1.0), forKey: "inputIntensity")
+                
+                
+                let ciContext = CIContext(options: nil)
+                let imageRef = ciContext.createCGImage((filter?.outputImage)!, from: (filter?.outputImage!.extent)!)
+                let outputImage = UIImage(cgImage: imageRef!)
+                weakSelf.samune.image = outputImage.cropping2trangle()
             })
         }
     }
