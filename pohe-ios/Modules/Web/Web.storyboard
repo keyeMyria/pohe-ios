@@ -37,12 +37,16 @@
                         <rightBarButtonItems>
                             <barButtonItem style="done" systemItem="action" id="jEj-bn-Ovj"/>
                             <barButtonItem systemItem="bookmarks" id="ovz-IA-yfF"/>
+                            <barButtonItem title="＞" id="ja5-vW-Ler"/>
+                            <barButtonItem title="＜" id="Plp-1H-rDf"/>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="back" destination="Plp-1H-rDf" id="mSw-xf-kI7"/>
                         <outlet property="bookmark" destination="ovz-IA-yfF" id="uqE-hf-tra"/>
                         <outlet property="cancel" destination="Ja5-uA-hMv" id="Y4C-bG-5dI"/>
                         <outlet property="container" destination="SYm-RJ-2Hj" id="pB4-JW-V14"/>
+                        <outlet property="forward" destination="ja5-vW-Ler" id="V7z-b3-Pgb"/>
                         <outlet property="share" destination="jEj-bn-Ovj" id="SRy-sn-LcL"/>
                     </connections>
                 </viewController>

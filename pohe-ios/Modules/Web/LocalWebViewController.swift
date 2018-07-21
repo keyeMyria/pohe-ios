@@ -15,6 +15,9 @@ class LocalWebViewController: UIViewController, WKUIDelegate, WKNavigationDelega
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var share: UIBarButtonItem!
     @IBOutlet weak var cancel: UIBarButtonItem!
+    @IBOutlet weak var back: UIBarButtonItem!
+    @IBOutlet weak var forward: UIBarButtonItem!
+    private var progressView = UIProgressView()
     private var url: String = ""
     private var page: PageObject? = nil
     private let disposeBag = DisposeBag()
@@ -23,7 +26,9 @@ class LocalWebViewController: UIViewController, WKUIDelegate, WKNavigationDelega
     override func loadView() {
         super.loadView()
         setupWebView()
-        self.setupButton()
+        setupButton()
+        setBackForwardStatus()
+        setupProgress()
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -37,7 +42,7 @@ class LocalWebViewController: UIViewController, WKUIDelegate, WKNavigationDelega
         webView.allowsBackForwardNavigationGestures = true
         webView.uiDelegate = self
         webView.navigationDelegate = self
-        
+        addObservers()
         container.addSubview(webView)
         guard let url = NSURL(string: self.url) else {
             return
@@ -47,7 +52,12 @@ class LocalWebViewController: UIViewController, WKUIDelegate, WKNavigationDelega
         let mutableRequest = request as! NSMutableURLRequest
         let cache = URLCache.shared
         let response = cache.cachedResponse(for: mutableRequest as URLRequest)
-        webView.load(response!.data, mimeType: "text/html", characterEncodingName: "UTF-8", baseURL: url as URL)
+        if (response == nil) {
+            webView.load(mutableRequest as URLRequest)
+        } else {
+            webView.load(response!.data, mimeType: "text/html", characterEncodingName: "UTF-8", baseURL: url as URL)
+        }
+        
 //        URLProtocol.setProperty(true, forKey: "", in: mutableRequest)
 //        webView.load(mutableRequest as URLRequest)
         
@@ -84,6 +94,12 @@ class LocalWebViewController: UIViewController, WKUIDelegate, WKNavigationDelega
         share.rx.tap.subscribe(onNext: { [weak self] _ in
             self?.showActivity()
         }).disposed(by: disposeBag)
+        back.rx.tap.subscribe(onNext: { [weak self] _ in
+            self?.webView.goBack()
+        }).disposed(by: disposeBag)
+        forward.rx.tap.subscribe(onNext: { [weak self] _ in
+            self?.webView.goForward()
+        }).disposed(by: disposeBag)
     }
     
     private func showActivity() {
@@ -93,5 +109,54 @@ class LocalWebViewController: UIViewController, WKUIDelegate, WKNavigationDelega
         let activity = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         
         present(activity, animated: true)
+    }
+    
+    func addObservers(){
+        webView.addObserver(self, forKeyPath: "estimatedProgress", options: NSKeyValueObservingOptions.new, context: nil)
+        webView.addObserver(self, forKeyPath: "loading", options: NSKeyValueObservingOptions.new, context: nil)
+        webView.addObserver(self, forKeyPath: "URL", options: NSKeyValueObservingOptions.new, context: nil)
+        webView.addObserver(self, forKeyPath: "canGoBack", options: NSKeyValueObservingOptions.new, context: nil)
+        webView.addObserver(self, forKeyPath: "canGoForward", options: NSKeyValueObservingOptions.new, context: nil)
+    }
+    
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        switch keyPath {
+        case "estimatedProgress":
+            self.progressView.setProgress(Float(self.webView.estimatedProgress), animated: true)
+            break
+            
+        case "loading":
+            UIApplication.shared.isNetworkActivityIndicatorVisible = self.webView.isLoading
+            if (self.webView.isLoading) {
+                self.progressView.setProgress(0.1, animated: true)
+            }else{
+                // 読み込みが終わったら0.0をセット
+                self.progressView.setProgress(0.0, animated: false)
+            }
+            break
+        case "URL":
+            setBackForwardStatus()
+            break
+        case "canGoForward":
+            setBackForwardStatus()
+            break
+        case "canGoBack":
+            setBackForwardStatus()
+            break
+        default:
+            break
+        }
+    }
+    
+    func setBackForwardStatus() {
+        back.isEnabled = webView.canGoBack
+        forward.isEnabled = webView.canGoForward
+    }
+    
+    private func setupProgress() {
+        self.progressView = UIProgressView(frame: CGRect(x: 0.0, y: (self.navigationController?.navigationBar.frame.size.height)! - 3.0, width: self.view.frame.size.width, height: 3.0))
+        self.progressView.progressViewStyle = .bar
+        self.navigationController?.navigationBar.addSubview(self.progressView)
     }
 }

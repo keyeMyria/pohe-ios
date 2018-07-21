@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class MenuCell: UITableViewCell {
     static let cellID = "MenuCell"
@@ -14,10 +15,23 @@ class MenuCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var version: UILabel!
     @IBOutlet weak var switchView: UISwitch!
-    @IBAction func handleSwitch(_ sender: Any) {
-        UserDefaults.standard.set(switchView.isOn, forKey: list[self.tag])
-        print(UserDefaults.standard.bool(forKey: list[self.tag]))
-        print(list[self.tag])
+    @IBAction func handleSwitch(_ sender: UISwitch) {
+        switch(sender.tag) {
+        case 0:
+            UserDefaults.standard.set(switchView.isOn, forKey: list[self.tag])
+            break
+        case 1:
+            if let url = URL(string:UIApplicationOpenSettingsURLString) {
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+            break
+        default:
+            break
+        }
     }
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,9 +56,14 @@ class MenuCell: UITableViewCell {
             switchView.isHidden = false
         }
         if entity.subLabelType == "pushNotification" {
-            switchView.isHidden = false
+            switchView.isEnabled = true
+            UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+                self.switchView.isOn = (settings.authorizationStatus == .authorized)
+            }
             switchView.tag = 1
+            switchView.isEnabled = false
+//            switchView.color
+            switchView.isHidden = false
         }
     }
-
 }

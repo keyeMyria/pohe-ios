@@ -13,6 +13,12 @@ def common_pods
   pod 'APIKit', :git => 'https://github.com/ishkawa/APIKit', :branch => 'master'
   pod 'XLPagerTabStrip', '~> 8.0.1'
   pod 'RealmSwift', '~> 3.1.1'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Performance'
+  pod 'Firebase/Crash'
+  pod 'Fabric', '~> 1.7.2'
+  pod 'Crashlytics', '~> 3.9.3'
 end
 
 target 'pohe-ios' do

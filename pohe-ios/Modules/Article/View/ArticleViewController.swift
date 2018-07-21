@@ -69,7 +69,10 @@ class ArticleViewController: UIViewController, IndicatorInfoProvider {
     }
     
     private func saveCache(article: Article) {
-        RealmManager.addEntity(object: PageObject(page:article.page))
+        let p = PageObject(page:article.page)
+        p.score = article.score
+        p.category = article.category.name
+        RealmManager.addEntity(object: p)
         guard let url = NSURL(string: article.page.url) else {
             return
         }
@@ -137,8 +140,11 @@ extension ArticleViewController: UITableViewDelegate {
         guard let nc = self.navigationController else {
             return
         }
-        RealmManager.addEntity(object: HistoryObject(p: article.page))
-        WebViewUtil.showWKWebView(page: article.page, from: nc, disAppear: {})
+        let p = HistoryObject(p:article.page)
+        p.page?.score = article.score
+        p.page?.category = article.category.name
+        RealmManager.addEntity(object: p)
+        WebViewUtil.showWKWebView(article: article, from: nc, disAppear: {})
     }
 }
 

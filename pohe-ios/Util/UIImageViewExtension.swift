@@ -48,4 +48,17 @@ extension UIImage {
         if a < b { return a}
         else { return b}
     }
+    
+    func cropping2trangle()-> UIImage!{
+        let cgImage    = self.cgImage
+        let width = (cgImage?.width)!
+        let height = (cgImage?.height)!
+        let resizeSize = min(height,width)
+        
+        let cropCGImage = self.cgImage?.cropping(to: CGRect(x: (width - resizeSize) / 2, y: (height - resizeSize / 4) / 2, width: resizeSize, height: resizeSize / 4))
+        
+        let cropImage = UIImage(cgImage: cropCGImage!)
+        
+        return cropImage//.rotate(angle: 90)
+    }
 }

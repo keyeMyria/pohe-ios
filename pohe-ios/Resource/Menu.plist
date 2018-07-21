@@ -61,6 +61,16 @@
 		</dict>
 		<dict>
 			<key>subLabelType</key>
+			<string>pushNotification</string>
+			<key>segueIdentifier</key>
+			<string>pushNotification</string>
+			<key>name</key>
+			<string>プッシュ通知</string>
+			<key>hasSegue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>subLabelType</key>
 			<string>none</string>
 			<key>segueIdentifier</key>
 			<string>history</string>

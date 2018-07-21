@@ -45,7 +45,7 @@ class PageViewController: UIViewController {
     }
     
     func showPages() {
-        RealmManager.getEntityList(type: PageObject.self).forEach {
+        RealmManager.getEntityList(type: PageObject.self).sorted(byKeyPath: "createAt", ascending: false).forEach {
             self.pages.append($0)
         }
         tableView.reloadData()

@@ -15,7 +15,17 @@ class MenuViewController: UIViewController, MFMailComposeViewControllerDelegate 
     private let list: [[Menu]] = [Menu.mapSub(), Menu.map()]
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.rx.notification(Notification.Name.UIApplicationWillEnterForeground, object: nil)
+            .subscribe(onNext: { [weak self] in
+                self?.viewWillEnterForeground($0)
+            }).disposed(by: disposeBag)
+
+        
         setup()
+    }
+    
+    func viewWillEnterForeground(_ notification: Notification?) {
+        tableView.reloadRows(at: [IndexPath(item: 2, section: 0)], with: .none)
     }
     
     
@@ -112,6 +122,16 @@ extension MenuViewController: UITableViewDelegate {
             removeCache()
         case "history":
             perform(segue: StoryboardSegue.Menu.showHistory)
+        case "longPress":
+            break
+        case "pushNotification":
+            if let url = URL(string:UIApplicationOpenSettingsURLString) {
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
         default:
             performSegue(withIdentifier: entity.segueIdentifier!, sender: nil)
             break

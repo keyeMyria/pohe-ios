@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,11 +35,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="WuA-hd-5m6">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ZAs-Lq-htx"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="P45-Bu-XCc"/>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="action" id="P45-Bu-XCc"/>
+                            <barButtonItem title="＞" id="q7M-6f-wKE"/>
+                            <barButtonItem title="＜" id="q31-a6-o4y"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="back" destination="q31-a6-o4y" id="Q9o-Sp-6oA"/>
                         <outlet property="cancel" destination="ZAs-Lq-htx" id="kGt-lB-Eue"/>
                         <outlet property="container" destination="IjR-Ab-mrL" id="TAV-r9-bwR"/>
+                        <outlet property="forward" destination="q7M-6f-wKE" id="9z5-e7-SIR"/>
                         <outlet property="share" destination="P45-Bu-XCc" id="hbP-is-NKJ"/>
                     </connections>
                 </viewController>

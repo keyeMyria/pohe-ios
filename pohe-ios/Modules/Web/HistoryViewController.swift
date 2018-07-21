@@ -18,11 +18,12 @@ final class HistoryViewController: UIViewController, UITableViewDelegate, UITabl
     
     private var myTableView: UITableView!
 
-    private var list = RealmManager.getEntityList(type: HistoryObject.self)
+    private var list: [HistoryObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initButton()
+        initList()
         // Status Barの高さを取得する.
         let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
         
@@ -61,7 +62,9 @@ final class HistoryViewController: UIViewController, UITableViewDelegate, UITabl
         guard let nc = self.navigationController else {
             return
         }
-        WebViewUtil.showWKWebView(page: history.fromObject(page: history.page!), from: nc, disAppear: {})
+        let article = Article(_id: "", page: history.fromObject(page: history.page!), category: Category(_id:"",name:(history.page?.category)!), score: (history.page?.score)!)
+        
+        WebViewUtil.showWKWebView(article: article, from: nc, disAppear: {})
 //        print("Num: \(indexPath.row)")
 //        print("Value: \(myItems[indexPath.row])")
     }
@@ -86,7 +89,10 @@ final class HistoryViewController: UIViewController, UITableViewDelegate, UITabl
         let item = list[indexPath.row];
         
         cell.textLabel?.text = item.page?.title;
-        cell.detailTextLabel?.text = item.page?.url;
+        cell.detailTextLabel!.numberOfLines = 0
+        cell.detailTextLabel?.text = (item.page?.url)! +
+            "\n" +
+            Date.human(date: (item.page?.createAt!)!);
         
         return cell
     }
@@ -95,6 +101,24 @@ final class HistoryViewController: UIViewController, UITableViewDelegate, UITabl
         cancel.rx.tap.subscribe(onNext: {[weak self] in
             self?.dismiss(animated: true)
         }).disposed(by: disposeBag)
+    }
+    
+    private func initList() {
+        RealmManager.getEntityList(type: HistoryObject.self).sorted(byKeyPath: "createAt", ascending: false).forEach {
+            self.list.append($0)
+        }
+//        myTableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            //            let a = indexPath.row
+            RealmManager.deleteEntity(object: self.list[indexPath.row])
+            self.list.remove(at: indexPath.row)
+            //            self.memos.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 
 }

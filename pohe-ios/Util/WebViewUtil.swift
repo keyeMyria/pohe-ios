@@ -25,12 +25,12 @@ final class WebViewUtil {
         
     }
     
-    class func showWKWebView(page: Page, from: UINavigationController, disAppear: @escaping () -> Void) {
-        let encodeString = page.url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+    class func showWKWebView(article: Article, from: UINavigationController, disAppear: @escaping () -> Void) {
+        let encodeString = article.page.url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         guard let encodeUrl = encodeString, let url = URL(string: encodeUrl), ["http", "https"].contains(url.scheme?.lowercased() ?? "") else {
             return
         }
-        let nc = WebViewController().initWeb(page: page)
+        let nc = WebViewController().initWeb(article: article)
         let webview = nc.viewControllers.first as! WebViewController
         webview.isWebViewClose.asDriver(onErrorDriveWith: Driver.empty())
             .drive(
