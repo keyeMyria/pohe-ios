@@ -178,7 +178,8 @@ final class WebViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
                                       expectedContentLength: 0,
                                       textEncodingName: "UTF-8")
         let response = CachedURLResponse.init(response: urlResponse, data: data! as Data, userInfo: nil, storagePolicy: .allowed)
-        let myrequest = mutableRequest as URLRequest
+        let myrequest = NSURLRequest(url: url as URL, cachePolicy: NSURLRequest.CachePolicy.returnCacheDataElseLoad, timeoutInterval: 10.0) as URLRequest
+//        let myrequest = mutableRequest as URLRequest
         cache.storeCachedResponse(response, for: myrequest)
         showToast(message: "Bookmarked!")
     }

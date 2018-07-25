@@ -8,8 +8,16 @@ import RxCocoa
 import MessageUI
 import WebKit
 
-class MenuViewController: UIViewController, MFMailComposeViewControllerDelegate  {
-    @IBOutlet weak var tableView: UITableView!
+class MenuViewController: UIViewController, MFMailComposeViewControllerDelegate {
+
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.delegate = self
+//            tableView.dataSource = self
+//            tableView.register(R.nib.etcCell)
+//            tableView.register(R.nib.etcWeatherCell)
+        }
+    }
     @IBOutlet weak var cancel: UIBarButtonItem!
     private let disposeBag = DisposeBag()
     private let list: [[Menu]] = [Menu.mapSub(), Menu.map()]
@@ -31,6 +39,7 @@ class MenuViewController: UIViewController, MFMailComposeViewControllerDelegate 
     
     func setup() {
         tableView.register(UINib(nibName: MenuCell.cellID, bundle: nil), forCellReuseIdentifier: MenuCell.cellID)
+        tableView.register(UINib(nibName: WeatherCell.cellID, bundle: nil), forCellReuseIdentifier: WeatherCell.cellID)
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -94,9 +103,21 @@ extension MenuViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell: UITableViewCell
         let entity = list[indexPath.section][indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
-        cell.configure(entity: entity)
+        if (indexPath.section == 0 && indexPath.row == 0) {
+//            cell.delegate = self
+//            return cell
+            cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
+            (cell as! WeatherCell).delegate = self
+            
+            (cell as! WeatherCell).configure(entity: entity)
+        } else {
+            
+            cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
+            
+            (cell as! MenuCell).configure(entity: entity)
+        }
         return cell
     }
 
@@ -124,6 +145,8 @@ extension MenuViewController: UITableViewDelegate {
             perform(segue: StoryboardSegue.Menu.showHistory)
         case "longPress":
             break
+        case "weather":
+            break
         case "pushNotification":
             if let url = URL(string:UIApplicationOpenSettingsURLString) {
                 if #available(iOS 10.0, *) {
@@ -141,12 +164,19 @@ extension MenuViewController: UITableViewDelegate {
 
 }
 
-extension MenuViewController {
+extension MenuViewController: WeatherCellDelegate {
+    func updateFinished(cell: WeatherCell, result: Bool) {
+        if result {
+            tableView.reloadRows(at: [IndexPath(item: 0, section: 0)], with: .none)
+        }
+    }
+    
     
     func initPages() -> UINavigationController {
         let vc = StoryboardScene.Menu.menuViewController.instantiate()
         let nc = UINavigationController(rootViewController: vc)
         return nc
     }
+
 }
 

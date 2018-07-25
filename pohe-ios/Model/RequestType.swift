@@ -1,10 +1,6 @@
 //
 //  RequestType.swift
 //  pohe-ios
-//
-//  Created by 石 臙慧 on 2018/04/23.
-//  Copyright © 2018年 石 臙慧. All rights reserved.
-//
 
 import Foundation
 import APIKit
@@ -23,12 +19,7 @@ protocol RestRequest: Request {
 extension RestRequest {
     
     var headerFields: [String: String] {
-//        let accessToken = AccessTokenStorage.fetchAccessToken()
-//        if accessToken.isEmpty {
-//            return [:]
-//        }
         return [:]
-//        return ["Authorization": "Bearer \(accessToken)"]
     }
     
     var baseURL: URL {
@@ -50,6 +41,22 @@ extension RestRequest {
         }
     }
     
+}
+
+protocol WeatherRequest: RestRequest {
+}
+extension WeatherRequest {
+    var baseURL: URL {
+        return URL(string: "https://api.openweathermap.org/data/2.5/weather")!
+    }
+}
+
+protocol LocationRequest: RestRequest {
+}
+extension LocationRequest {
+    var baseURL: URL {
+        return URL(string: "https://geoapi.heartrails.com/api/json")!
+    }
 }
 
 extension RestRequest where Response: Codable {

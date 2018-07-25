@@ -40,6 +40,16 @@
 	<key>Sub</key>
 	<array>
 		<dict>
+			<key>name</key>
+			<string>天気</string>
+			<key>hasSegue</key>
+			<false/>
+			<key>segueIdentifier</key>
+			<string>weather</string>
+			<key>subLabelType</key>
+			<string>weather</string>
+		</dict>
+		<dict>
 			<key>subLabelType</key>
 			<string>none</string>
 			<key>segueIdentifier</key>

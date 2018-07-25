@@ -52,8 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication,didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         if let fcmToken = Messaging.messaging().fcmToken {
-            print("aaaa")
-            print(fcmToken)
             UserDefaults.standard.set(fcmToken, forKey: "fcm_token")
             Messaging.messaging().apnsToken = deviceToken
         }

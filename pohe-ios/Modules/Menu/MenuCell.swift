@@ -9,9 +9,11 @@
 import UIKit
 import UserNotifications
 
+
 class MenuCell: UITableViewCell {
     static let cellID = "MenuCell"
-    let list = ["longPress", "pushNotification"]
+    let list = ["weather", "longPress", "pushNotification"]
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var version: UILabel!
     @IBOutlet weak var switchView: UISwitch!
@@ -44,6 +46,8 @@ class MenuCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    
     func configure(entity: Menu) {
         
         titleLabel.text = entity.name
@@ -65,5 +69,12 @@ class MenuCell: UITableViewCell {
 //            switchView.color
             switchView.isHidden = false
         }
+//        if entity.subLabelType == "weather" {
+//            updateWeather()
+//        }
     }
+    
+    
 }
+
+

@@ -83,7 +83,8 @@ class ArticleViewController: UIViewController, IndicatorInfoProvider {
                                       expectedContentLength: 0,
                                       textEncodingName: "UTF-8")
         let response = CachedURLResponse.init(response: urlResponse, data: data! as Data, userInfo: nil, storagePolicy: .allowed)
-        let request = NSURLRequest(url: url as URL) as URLRequest?
+        let request = NSURLRequest(url: url as URL, cachePolicy: NSURLRequest.CachePolicy.returnCacheDataElseLoad, timeoutInterval: 10.0) as URLRequest?
+//        let request = NSURLRequest(url: url as URL) as URLRequest?
         let mutableRequest = request as! NSMutableURLRequest
         URLProtocol.setProperty(true, forKey: "", in: mutableRequest)
         let myrequest = mutableRequest as URLRequest
