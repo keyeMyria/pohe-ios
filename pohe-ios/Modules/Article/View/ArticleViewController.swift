@@ -161,6 +161,9 @@ extension ArticleViewController: UIGestureRecognizerDelegate {
         if (!isAllow) {
             return
         }
+        if (!CheckReachability(host_name: "google.com")) {
+            return
+        }
         
         let point = recognizer.location(in: tableView)
         let indexPath = tableView.indexPathForRow(at: point)

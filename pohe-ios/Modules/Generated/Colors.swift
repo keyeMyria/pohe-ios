@@ -32,6 +32,12 @@ struct ColorName {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#bfa825"></span>
   /// Alpha: 100% <br/> (0xbfa825ff)
   static let colorAccent = ColorName(rgbaValue: 0xbfa825ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#e6edf4"></span>
+  /// Alpha: 100% <br/> (0xe6edf4ff)
+  static let colorDark = ColorName(rgbaValue: 0xe6edf4ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#f0f8ff"></span>
+  /// Alpha: 100% <br/> (0xf0f8ffff)
+  static let colorLight = ColorName(rgbaValue: 0xf0f8ffff)
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#94ccc3"></span>
   /// Alpha: 100% <br/> (0x94ccc3ff)
   static let colorPrimary = ColorName(rgbaValue: 0x94ccc3ff)

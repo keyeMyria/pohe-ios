@@ -12,7 +12,7 @@ import UserNotifications
 
 class MenuCell: UITableViewCell {
     static let cellID = "MenuCell"
-    let list = ["weather", "longPress", "pushNotification"]
+    let list = ["longPress", "pushNotification"]
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var version: UILabel!
@@ -21,6 +21,7 @@ class MenuCell: UITableViewCell {
         switch(sender.tag) {
         case 0:
             UserDefaults.standard.set(switchView.isOn, forKey: list[self.tag])
+            print(list[self.tag])
             break
         case 1:
             if let url = URL(string:UIApplicationOpenSettingsURLString) {

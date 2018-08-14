@@ -36,6 +36,16 @@
 			<key>subLabelType</key>
 			<string>none</string>
 		</dict>
+		<dict>
+			<key>subLabelType</key>
+			<string>none</string>
+			<key>segueIdentifier</key>
+			<string>review</string>
+			<key>hasSegue</key>
+			<false/>
+			<key>name</key>
+			<string>App Store でレビュー</string>
+		</dict>
 	</array>
 	<key>Sub</key>
 	<array>

@@ -10,7 +10,7 @@ import UIKit
 import XLPagerTabStrip
 import RxSwift
 
-class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollectionViewCell> {
+class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollectionViewCell>, UITabBarDelegate {
 
     private let categories = [
         "javascript",
@@ -36,6 +36,7 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollection
     var presenter: MainPresentation!
     private let disposeBag = DisposeBag()
     
+    @IBOutlet weak var tabbar: UITabBar!
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -69,6 +70,9 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollection
         self.navigationController?.navigationBar.barTintColor = UIColor(named: .colorPrimary)
         let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor(named: .white)]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
+        tabbar.delegate = self
+//        removeTabbarItemsText()
+        
         super.viewDidLoad()
         self.navigationItem.title = "Pohe"
         self.setButton()
@@ -77,17 +81,38 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollection
     
     private func setButton() {
 //        let bookmark = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: nil, action: nil)
-        let organize = UIBarButtonItem(barButtonSystemItem: .organize, target: nil, action: nil)
-        self.navigationItem.rightBarButtonItems = [organize]
+//        let organize = UIBarButtonItem(barButtonSystemItem: .organize, target: nil, action: nil)
+//        self.navigationItem.rightBarButtonItems = [organize]
 //        bookmark.tintColor = .white
-        organize.tintColor = .white
+//        organize.tintColor = .white
 //        bookmark.rx.tap.subscribe(onNext: {[weak self] in
 //            self?.goPages()
 //        }).disposed(by: disposeBag)
-        organize.rx.tap.subscribe(onNext: {[weak self] in
-            self?.goMenu()
-        }).disposed(by: disposeBag)
+//        organize.rx.tap.subscribe(onNext: {[weak self] in
+//            self?.goMenu()
+//        }).disposed(by: disposeBag)
+        
     }
+    
+    func removeTabbarItemsText() {
+        
+        var offset: CGFloat = 9.0
+        
+        if #available(iOS 11.0, *), traitCollection.horizontalSizeClass == .regular {
+//            offset = 0.0
+        }
+        
+        if let items = tabbar.items {
+            for item in items {
+                item.title = ""
+                item.imageInsets = UIEdgeInsetsMake(offset, 0, -offset, 0);
+            item.setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor.clear], for: .selected)
+            item.setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor.clear], for: .normal)
+            }
+        }
+        
+    }
+
     
     private func goPages() {
         let nc = PageViewController().initPages()
@@ -96,6 +121,11 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollection
     
     private func goMenu() {
         let nc = MenuViewController().initPages()
+        self.navigationController?.present(nc, animated: true, completion: nil)
+    }
+    
+    private func goSearch() {
+        let nc = SearchViewController().initPages()
         self.navigationController?.present(nc, animated: true, completion: nil)
     }
     
@@ -140,5 +170,21 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabCollection
             }
         }
         super.updateIndicator(for: viewController, fromIndex: fromIndex, toIndex: toIndex, withProgressPercentage: progressPercentage, indexWasChanged: indexWasChanged)
+    }
+    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        switch item.tag{
+        case 0:
+//            print("home")
+            self.moveToViewController(at: 0,animated: true)
+        case 1:
+            goSearch()
+        case 2:
+            goPages()
+        case 3:
+            goMenu()
+        default : return
+            
+        }
     }
 }

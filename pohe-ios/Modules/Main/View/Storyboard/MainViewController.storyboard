@@ -21,6 +21,18 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NOb-vL-JOU">
                                 <rect key="frame" x="0.0" y="65" width="375" height="558"/>
                             </scrollView>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ToM-mT-LIr">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem systemItem="recents" id="uOb-Tq-RfU"/>
+                                    <tabBarItem tag="1" systemItem="search" id="7cf-kZ-pob"/>
+                                    <tabBarItem tag="2" systemItem="bookmarks" id="wQh-xk-Fd7"/>
+                                    <tabBarItem tag="3" systemItem="more" id="dYY-CX-8Zq"/>
+                                </items>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedImageTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tabBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QSw-Ai-bbh" customClass="ButtonBarView" customModule="XLPagerTabStrip">
                                 <rect key="frame" x="0.0" y="20" width="375" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -40,9 +52,12 @@
                         <constraints>
                             <constraint firstItem="QSw-Ai-bbh" firstAttribute="leading" secondItem="3Vz-pI-ZHq" secondAttribute="leading" id="470-rs-hY2"/>
                             <constraint firstItem="QSw-Ai-bbh" firstAttribute="trailing" secondItem="3Vz-pI-ZHq" secondAttribute="trailing" id="A4u-Kg-L8Z"/>
+                            <constraint firstItem="ToM-mT-LIr" firstAttribute="trailing" secondItem="3Vz-pI-ZHq" secondAttribute="trailing" id="NJZ-Ka-udD"/>
+                            <constraint firstItem="ToM-mT-LIr" firstAttribute="leading" secondItem="3Vz-pI-ZHq" secondAttribute="leading" id="RTv-fj-CD7"/>
                             <constraint firstItem="NOb-vL-JOU" firstAttribute="leading" secondItem="3Vz-pI-ZHq" secondAttribute="leading" id="YWi-Vz-MfY"/>
                             <constraint firstItem="NOb-vL-JOU" firstAttribute="trailing" secondItem="3Vz-pI-ZHq" secondAttribute="trailing" id="YrD-lN-5V4"/>
                             <constraint firstItem="NOb-vL-JOU" firstAttribute="top" secondItem="QSw-Ai-bbh" secondAttribute="bottom" id="hx0-vQ-QGE"/>
+                            <constraint firstAttribute="bottom" secondItem="ToM-mT-LIr" secondAttribute="bottom" id="ima-mR-yAT"/>
                             <constraint firstItem="NOb-vL-JOU" firstAttribute="bottom" secondItem="3Vz-pI-ZHq" secondAttribute="bottom" id="oPk-iu-m9U"/>
                             <constraint firstItem="QSw-Ai-bbh" firstAttribute="top" secondItem="3Vz-pI-ZHq" secondAttribute="top" id="tNa-iY-6mu"/>
                         </constraints>
@@ -53,6 +68,7 @@
                     <connections>
                         <outlet property="buttonBarView" destination="QSw-Ai-bbh" id="jsV-cZ-Cpl"/>
                         <outlet property="containerView" destination="NOb-vL-JOU" id="AcA-Xf-YZX"/>
+                        <outlet property="tabbar" destination="ToM-mT-LIr" id="G3t-WK-sbr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Flo-5G-L04" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -44,6 +44,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        if CheckReachability(host_name: "google.com") {
+            print("インターネットへの接続が確認されました")
+        } else {
+            print("インターネットに接続してください")
+            
+            let alertController = UIAlertController(title: "インターネット未接続", message: "インターネット未接続でも\nブックマークを閲覧できます。\nブックマークに遷移しますか？", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "はい", style: .default, handler: {action in self.bookmark()})
+            alertController.addAction(defaultAction)
+            alertController.addAction(UIAlertAction(title: "やめる", style: .cancel, handler: nil))
+
+            self.window?.rootViewController?.present(alertController, animated: true, completion: nil)
+            
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -84,6 +98,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UIApplication.shared.registerUserNotificationSettings(settings)
         }
         UIApplication.shared.registerForRemoteNotifications()
+    }
+    
+    func bookmark() {
+        let nc = PageViewController().initPages()
+        window?.rootViewController?.present(nc, animated: true, completion: nil)
     }
 
 }

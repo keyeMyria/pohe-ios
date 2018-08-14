@@ -147,6 +147,10 @@ extension MenuViewController: UITableViewDelegate {
             break
         case "weather":
             break
+        case "review":
+            if let url = URL(string: "https://itunes.apple.com/app/id1401097939?action=write-review") {
+                UIApplication.shared.open(url)
+            }
         case "pushNotification":
             if let url = URL(string:UIApplicationOpenSettingsURLString) {
                 if #available(iOS 10.0, *) {

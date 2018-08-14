@@ -107,6 +107,13 @@ enum StoryboardScene {
 
     static let pageViewController = SceneType<pohe_ios.PageViewController>(storyboard: PageViewController.self, identifier: "PageViewController")
   }
+  enum Search: StoryboardType {
+    static let storyboardName = "Search"
+
+    static let initialScene = InitialSceneType<UINavigationController>(storyboard: Search.self)
+
+    static let searchViewController = SceneType<pohe_ios.SearchViewController>(storyboard: Search.self, identifier: "SearchViewController")
+  }
   enum Web: StoryboardType {
     static let storyboardName = "Web"
 

@@ -9,13 +9,13 @@
 import Foundation
 
 struct Page: Codable {
-    let _id: String
-    let url: String
-    let title :String
-    let thumbnail: String?
-    let timestamp: Date?
-    let site_name: String?
-    let description: String?
+    var _id: String
+    var url: String
+    var title :String
+    var thumbnail: String?
+    var timestamp: Date?
+    var site_name: String?
+    var description: String?
 
 
     public enum CodingKeys: String, CodingKey {
